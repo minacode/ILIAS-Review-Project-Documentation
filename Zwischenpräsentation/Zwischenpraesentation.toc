@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Aufgabe}{3}{0}{1}
+\beamer@sectionintoc {2}{Probleme}{6}{0}{2}
+\beamer@sectionintoc {3}{Diagramme}{7}{0}{3}
+\beamer@sectionintoc {4}{Prototyp}{10}{0}{4}
