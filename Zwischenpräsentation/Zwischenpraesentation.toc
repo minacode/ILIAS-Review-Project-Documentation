@@ -1,5 +1,6 @@
 \beamer@endinputifotherversion {3.33pt}
-\beamer@sectionintoc {1}{Aufgabe}{3}{0}{1}
-\beamer@sectionintoc {2}{Probleme}{6}{0}{2}
-\beamer@sectionintoc {3}{Diagramme}{7}{0}{3}
-\beamer@sectionintoc {4}{Prototyp}{10}{0}{4}
+\beamer@sectionintoc {1}{Teamaufteilung}{3}{0}{1}
+\beamer@sectionintoc {2}{Aufgabe}{4}{0}{2}
+\beamer@sectionintoc {3}{Probleme}{7}{0}{3}
+\beamer@sectionintoc {4}{Diagramme}{8}{0}{4}
+\beamer@sectionintoc {5}{Prototyp}{11}{0}{5}
