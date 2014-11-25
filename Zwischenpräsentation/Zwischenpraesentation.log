@@ -1,7 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  24 NOV 2014 14:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  24 NOV 2014 16:12
 entering extended mode
 **Zwischenpraesentation.tex
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.tex
+
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -964,7 +966,8 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.aux)
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
@@ -1043,8 +1046,10 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.out)
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.out)
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.out)
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 9.
@@ -1125,7 +1130,8 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \includegraphics on input line 9.
 
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.nav)
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 10.
@@ -1133,14 +1139,32 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.toc) [2
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.toc) [2
 
 ] [3
 
-] [4
-
 ]
-[5
+LaTeX Font Info:    Try loading font information for U+msa on input line 37.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 37.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
+line 37.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sansmathaccent\ot1mathkerncmss.fd
+"
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+) [4
+
+] [5
 
 ] [6
 
@@ -1156,12 +1180,13 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
 
-(C:\Users\Pebtol\Desktop\swwt\latex\Zwischenpraesentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
+chenpräsentation\Zwischenpraesentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `Zwischenpraesentation.out' has not changed.
 (rerunfilecheck)             Checksum: 91249DFBF868483596A990F72F9F7E74;176.
 
@@ -1169,22 +1194,24 @@ Package rerunfilecheck Info: File `Zwischenpraesentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 16666 strings out of 493921
- 320210 string characters out of 3144872
- 384415 words of memory out of 3000000
- 19557 multiletter control sequences out of 15000+200000
- 5759 words of font info for 21 fonts, out of 3000000 for 9000
+ 16787 strings out of 493921
+ 324296 string characters out of 3144872
+ 386415 words of memory out of 3000000
+ 19656 multiletter control sequences out of 15000+200000
+ 10394 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,15n,55p,420b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,55p,420b,633s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb>
-Output written on Zwischenpraesentation.pdf (10 pages, 100462 bytes).
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on Zwischenpraesentation.pdf (10 pages, 119268 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
+ 369 PDF objects out of 1000 (max. 8388607)
  25 named destinations out of 1000 (max. 500000)
  75 words of extra memory for PDF output out of 10000 (max. 10000000)
 
