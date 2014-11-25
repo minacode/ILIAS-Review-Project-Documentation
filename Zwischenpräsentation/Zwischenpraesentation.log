@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  25 NOV 2014 13:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  25 NOV 2014 14:08
 entering extended mode
 **Zwischenpraesentation.tex
 
@@ -1176,34 +1176,32 @@ thkerncmss.
 
 ] [10
 
-] [11
-
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
 
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Zwis
 chenpräsentation\Zwischenpraesentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `Zwischenpraesentation.out' has not changed.
-(rerunfilecheck)             Checksum: CFB566E3C70443E66A3B423850C1B5B0;226.
+(rerunfilecheck)             Checksum: 49E7A45D80803498526DC95A9F6D3E91;195.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
- 16803 strings out of 493921
- 324503 string characters out of 3144872
- 386415 words of memory out of 3000000
- 19668 multiletter control sequences out of 15000+200000
- 12042 words of font info for 44 fonts, out of 3000000 for 9000
+ 16778 strings out of 493921
+ 324007 string characters out of 3144872
+ 386552 words of memory out of 3000000
+ 19643 multiletter control sequences out of 15000+200000
+ 11735 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  56i,15n,55p,420b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb>
@@ -1211,9 +1209,9 @@ Here is how much of TeX's memory you used:
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on Zwischenpraesentation.pdf (11 pages, 128996 bytes).
+Output written on Zwischenpraesentation.pdf (10 pages, 119359 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
+ 372 PDF objects out of 1000 (max. 8388607)
  28 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 75 words of extra memory for PDF output out of 10000 (max. 10000000)
 

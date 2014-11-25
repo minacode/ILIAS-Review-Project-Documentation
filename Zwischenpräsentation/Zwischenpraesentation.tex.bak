@@ -7,90 +7,79 @@
 \date{\today}
 
 \begin{document}
-\maketitle
-\frame{\tableofcontents[]}
+	\maketitle
+	\frame{\tableofcontents[]}
 
-\section{Teamaufteilung}
-\begin{frame}
-	\frametitle{Aufteilung des Teams}
-	\begin{tabular}{|c|c|}\hline
-		Teammitglied & Aufgabe \\\hline
-		Josephine Rehak & Chefprogrammiererin\\\hline
-		Richard Mörbitz & Assistent\\\hline
-		Max Friedrich & Administrator\\\hline
-		Peter Merseburger & Testverantwortlicher\\\hline
-		Julius Felchow & Sekretär\\\hline
-	\end{tabular}
-\end{frame} 
+	\section{Teamaufteilung}
+	\begin{frame}
+		\frametitle{Aufteilung des Teams}
+		\begin{tabular}{|c|c|}\hline
+			Teammitglied & Aufgabe \\\hline
+			Josephine Rehak & Chefprogrammiererin\\\hline
+			Richard Mörbitz & Assistent\\\hline
+			Max Friedrich & Administrator\\\hline
+			Peter Merseburger & Testverantwortlicher\\\hline
+			Julius Felchow & Sekretär\\\hline
+		\end{tabular}
+	\end{frame} 
  
-\section{Aufgabe}
-\begin{frame} %%Eine Folie
-  \frametitle{Einführung zur Thematik} %%Folientitel
-  	Ilias ist eine E-Learning Plattform in der E-Klausuren 			erstellt werden können. Ein Fragenpool kann erstellt und die Fragen in der Klausur genutzt werden.\\
-    Bisher fehlt eine Reviewmöglichkeit dieser Fragen.
-\end{frame}
+	\section{Aufgabe}
+		\begin{frame} %%Eine Folie
+			\frametitle{Einführung zur Thematik} %%Folientitel
+  			Ilias ist eine E-Learning Plattform in der E-					Klausuren erstellt werden können. Ein Fragenpool 				kann erstellt und die Fragen in der Klausur 					genutzt werden.\\
+    		Bisher fehlt eine Reviewmöglichkeit dieser Fragen.
+		\end{frame}
 
-\begin{frame} %%Eine Folie
-  \frametitle{Musskriterien} %%Folientitel
-    \begin{itemize}
-    	\item Entwickeln von 2 Plugins zum ... 
+		\begin{frame} %%Eine Folie
+			\frametitle{Musskriterien} %%Folientitel
+	    	\begin{itemize}
+	    		\item Entwickeln von 2 Plugins zum ... 
+	    			\begin{itemize}
+	    				\item Erstellen reviewbarer Fragen
+	    				\item Erstellen von Reviews
+    					\item manuellen Zuordnen von Reviewer 							und	Autor
+    					\item Betrachten der Reviews
+					\end{itemize}    			
+    			\item Unterstützung der Sprache Deutsch und 					Englisch
+    		\end{itemize}
+		\end{frame}
+
+		\begin{frame} %%Eine Folie
+		  	\frametitle{Kannkriterien} %%Folientitel
+  			\begin{itemize}
+  				\item Itemkonstruktion
+			  	\item Blueprint
+			    \item Fragenhistory
+			    \item zufällige Reviewverteilung
+			\end{itemize}
+		\end{frame}
+
+	\section{Probleme}
+		\begin{frame} %%Eine Folie
+			\frametitle{Problembehandlung} %%Folientitel
     		\begin{itemize}
-    			 \item Erstellen reviewbarer Fragen
-    			 \item Erstellen von Reviews
-    			 \item manuellen Zuordnen von Reviewer und						Autor
-    			 \item Betrachten der Reviews
-			\end{itemize}    			
-    	\item Unterstützung der Sprache Deutsch und Englisch
-    \end{itemize}
-\end{frame}
+    			\item Wahl des Repositorys
+		    	\item Erstellen der Reviewbaren Fragen
+    			\item Wahl der Reviewerzuordnung
+    		\end{itemize}
+		\end{frame}
 
-\begin{frame} %%Eine Folie
-  \frametitle{Kannkriterien} %%Folientitel
-  \begin{itemize}
-  	\item Itemkonstruktion
-  	\item Blueprint
-    \item Fragenhistory
-    \item zufällige Reviewverteilung
-  \end{itemize}
-\end{frame}
+	\section{Diagramme und Prototyp}
+		\begin{frame} %%Eine Folie
+			\frametitle{Entwurfsklassendiagramm} %%Folientitel
+			%\includegraphics[width=1.0\textwidth]{.png}
+			\label{Entwurfsklassendiagramm}
+		\end{frame}
 
-\section{Probleme}
-\begin{frame} %%Eine Folie
-  \frametitle{Problembehandlung} %%Folientitel
-    \begin{itemize}
-    	\item Nutzung von GitHub nach Absprache mit ILIAS-Mitarbeiter
-    	\item Erstellen der Reviewbaren Fragen
-    	\item Die Doku von Ilias gibt n
-    \end{itemize}
-\end{frame}
+		\begin{frame} %%Eine Folie
+			\frametitle{Sequenzdiagramme} %%Folientitel
+			%\includegraphics[width=1.0\textwidth]{.png}
+			\label{Sequenzdiagramme}
+		\end{frame}
 
-\section{Diagramme}
-\begin{frame} %%Eine Folie
-  \frametitle{Entwurfsklassendiagramm} %%Folientitel
-  \begin{Definition} %%Definition
-    Eine Definition
-  \end{Definition}
-\end{frame}
-
-\begin{frame} %%Eine Folie
-  \frametitle{Sequenzdiagramme} %%Folientitel
-  \begin{Definition} %%Definition
-    Eine Definition
-  \end{Definition}
-\end{frame}
-
-\begin{frame} %%Eine Folie
-  \frametitle{Zustandsdiagramme} %%Folientitel
-  \begin{Definition} %%Definition
-    Eine Definition
-  \end{Definition}
-\end{frame}
-
-\section{Prototyp}
-\begin{frame} %%Eine Folie
-  \frametitle{Zustandsdiagramme} %%Folientitel
-  \begin{Definition} %%Definition
-    Eine Definition
-  \end{Definition}
-\end{frame}
+		\begin{frame} %%Eine Folie
+			\frametitle{Zustandsdiagramme} %%Folientitel
+			%\includegraphics[width=1.0\textwidth]{.png}
+			\label{Zustandsdiagramme}
+		\end{frame}
 \end{document}
