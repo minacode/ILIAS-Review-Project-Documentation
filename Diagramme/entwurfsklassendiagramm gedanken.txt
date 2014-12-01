@@ -1,0 +1,6 @@
+- ilExampleConfigGUI ist falsch, wenn, dann ilReviewConfigGUI, aber bei uns nicht notwendig
+- Button-klasse mit hinzufügen ...
+- es gibt inter noch mehr GUIs
+- ilObjReview(Plugin) übernimmt die Aufgaben des DB-Managers -> löschen
+- revieable Question Zeug
+- State-Pattern: Zustände von Fragen
