@@ -1,0 +1,20 @@
+Übersicht Datenbank:
+
+benutzt:
+- qpl_questions        .. beinhaltet alle Fragen
+- object_reference .. beinhaltet Zuordnung von lokaler Object-Id zu globaler Object-Id
+- crs_items                  .. beinhaltet alle Repository-Objekte in einer Gruppe
+- object_data            .. beinhaltet alle Objekte in Ilias
+- rbac_ua .. bildet Nutzer auf Rollen ab
+
+neu:
+- qpl_rev_qst .. beinhaltet Taxonomie-Daten von Fragen --> alle reviewbaren Fragen
+- rep_robj_xrev_revobj .. Standardtabelle für Review-Plugin-Objekte, speichert Gruppen-Id
+- rep_robj_xrev_quest   .. speichert Review-spezifische Frage-Informationen
+- rep_robj_xrev_revi .. speichert alle Review-Daten
+- rep_robj_xrev_taxon .. beinhaltet alle Taxonomie-Stufen
+- rep_robj_xrev_knowd .. beinhaltet alle Knowledge-Dimensionen
+- rep_robj_xrev_rate .. beinhaltet Fragen-Bewertungsmöglichkeiten
+- rep_robj_xrev_eval .. beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen
+- rep_robj_xrev_expert .. beinhaltet alle möglichen Expertisen für Reviewer
+
