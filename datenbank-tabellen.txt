@@ -16,5 +16,4 @@ neu:
 - rep_robj_xrev_knowd .. beinhaltet alle Knowledge-Dimensionen
 - rep_robj_xrev_rate .. beinhaltet Fragen-Bewertungsmöglichkeiten
 - rep_robj_xrev_eval .. beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen
-- rep_robj_xrev_expert .. beinhaltet alle möglichen Expertisen für Reviewer
-
+- rep_robj_xrev_expert .. beinhaltet alle möglichen Expertisen für Reviewern
