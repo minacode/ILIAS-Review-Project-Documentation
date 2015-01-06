@@ -1,33 +1,42 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.11.20)  5 JAN 2015 17:22
-entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
+This is LuaTeX, Version beta-0.76.0-2013062820 (rev 4627)  (format=lualatex 2015.1.6)  6 JAN 2015 23:54
 **entwicklerdokumentation.tex
-(./entwicklerdokumentation.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 4 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2013/12/19 v3.12 KOMA-Script document class (report)
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-dependent b
+
+(C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Entwicklerdokumentat
+ion/entwicklerdokumentation.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ara
+bic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, cr
+oatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
+ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, 
+indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian, lith
+uanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
+-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, ru
+ssian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerman, tami
+l, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
+elsh, loaded.
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2014/10/28 v3.14 KOMA-Script document class (report)
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2014/10/28 v3.14 KOMA-Script package (KOMA-Script-dependent ba
+sics and keyval usage)
+
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2014/10/28 v3.14 KOMA-Script package (KOMA-Script-independent b
 asics and keyval usage)
 
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2013/12/19 v3.12 KOMA-Script package (KOMA-Script-independent 
-basics and keyval usage)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+("C:/Program Files/MikTEX/tex/latex/graphics/keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2013/12/19 v3.12 KOMA-Script package (loading files)
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2014/10/28 v3.14 KOMA-Script package (loading files)
 
-Package scrlfile, 2013/12/19 v3.12 KOMA-Script package (loading files)
+Package scrlfile, 2014/10/28 v3.14 KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
-))) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2013/12/19 v3.12 KOMA-Script package (handling toc-files)
+)))
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2014/10/28 v3.14 KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
@@ -38,25 +47,26 @@ Package tocbasic Info: omitting babel extension for `lof'
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 119.
-Package tocbasic Info: defining new hook before heading of `' on input line 112
-3.
+Package tocbasic Info: defining new hook before heading of `' on input line 1141
+.
 Package scrreprt Info: You've used standard option `12pt'.
 (scrreprt)             This is correct!
 (scrreprt)             Internally I'm using `fontsize=12pt'.
 (scrreprt)             If you'd like to set the option with \KOMAoptions,
 (scrreprt)             you'd have to use `fontsize=12pt' there
 (scrreprt)             instead of `12pt', too.
-Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 1655.
+Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input li
+ne 1673.
 
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2013/12/19 v3.12 KOMA-Script font size class option (12pt
-)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2013/12/19 v3.12 KOMA-Script package (type area)
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/scrsize12pt.cl
+o
+File: scrsize12pt.clo 2014/10/28 v3.14 KOMA-Script font size class option (12pt)
 
-Package typearea, 2013/12/19 v3.12 KOMA-Script package (type area)
+)
+(C:/Users/Phine/AppData/Roaming/MiKTeX/2.9/tex/latex/koma-script/typearea.sty
+Package: typearea 2014/10/28 v3.14 KOMA-Script package (type area)
+
+Package typearea, 2014/10/28 v3.14 KOMA-Script package (type area)
                   Copyright (C) Frank Neukam, 1992-1994
                   Copyright (C) Markus Kohm, 1994-
 
@@ -88,7 +98,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1330.
+(typearea)              on input line 1340.
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -103,19 +113,19 @@ Package typearea Info: These are the values describing the layout:
 \c@figure=\count87
 \c@table=\count88
 \bibindent=\dimen102
-) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+) ("C:/Program Files/MikTEX/tex/latex/base/inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+("C:/Program Files/MikTEX/tex/latex/base/utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+("C:/Program Files/MikTEX/tex/latex/base/t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -265,7 +275,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+("C:/Program Files/MikTEX/tex/latex/base/ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -296,7 +306,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+("C:/Program Files/MikTEX/tex/latex/base/omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -320,24 +330,24 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+("C:/Program Files/MikTEX/tex/latex/amsmath/amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:/Program Files/MikTEX/tex/latex/amsmath/amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+("C:/Program Files/MikTEX/tex/latex/amsmath/amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen103
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:/Program Files/MikTEX/tex/latex/amsmath/amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+("C:/Program Files/MikTEX/tex/latex/amsmath/amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count89
@@ -378,19 +388,18 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:/Program Files/MikTEX/tex/latex/amsfonts/amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+("C:/Program Files/MikTEX/tex/latex/amsfonts/amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(./entwicklerdokumentation.aux)
-\openout1 = `entwicklerdokumentation.aux'.
-
+(C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Entwicklerdokumentat
+ion/entwicklerdokumentation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
@@ -403,51 +412,137 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
- (./entwicklerdokumentation.toc
+
+(C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Entwicklerdokumentat
+ion/entwicklerdokumentation.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+("C:/Program Files/MikTEX/tex/latex/amsfonts/umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+("C:/Program Files/MikTEX/tex/latex/amsfonts/umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write3
-\openout3 = `entwicklerdokumentation.toc'.
-
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{C:/Users/Phine/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Chapter 1.
+
+! Package inputenc Error: Unicode char \u8:äru not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ...kommt das Toplevel-Diagramm und die Erkläru
+                                                  ng, welche Plugins es gibt...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode char \u8:äru not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 		Tabelle & Erkläru
+                       ng \\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [2
 
 ]
 Chapter 2.
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 ...der Reviewable Question auf andere Fragen ü
+                                                  bertägt.
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+! Package inputenc Error: Unicode char \u8:ägt not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 ...ewable Question auf andere Fragen übertägt
+                                                  .
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode char \u8:äru not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 Erkläru
+           ng der Datei. Im Genaueren alle neuen und überschriebenen Funkti...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 ...ng der Datei. Im Genaueren alle neuen und ü
+                                                  berschriebenen Funktionen ...
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+Overfull \hbox (3.53061pt too wide) in paragraph at lines 36--37
+[]\OT1/cmr/m/n/12 Erklng der Datei. Im Genaueren alle neuen und berschriebe-nen
+ Funk-tio-nen mit Gedanken
+ []
+
 [3
 
 ]
 Chapter 3.
 [4
 
-] (./entwicklerdokumentation.aux) ) 
-Here is how much of TeX's memory you used:
- 2642 strings out of 494978
- 37155 string characters out of 6180202
- 134109 words of memory out of 5000000
- 5865 multiletter control sequences out of 15000+600000
- 9768 words of font info for 37 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 40i,7n,51p,268b,158s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssbx10.pfb>
-Output written on entwicklerdokumentation.pdf (4 pages, 29663 bytes).
-PDF statistics:
- 25 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
+]
+(C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Entwicklerdokumentat
+ion/entwicklerdokumentation.aux) )
+
+Here is how much of LuaTeX's memory you used:
+ 2946 strings out of 494074
+ 100000,552014 words of node,token memory allocated
+ 327 words of node memory still in use:
+    nodes
+   avail lists: 2:19,3:54,4:182,5:18,6:299,7:8,9:61,10:22
+ 6516 multiletter control sequences out of 65536+200000
+ 37 fonts using 1045923 bytes
+ 40i,6n,48p,262b,162s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MikTEX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
+les/MikTEX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on entwicklerdokumentation.pdf (4 pages, 31082 bytes).
+
+PDF statistics: 23 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
