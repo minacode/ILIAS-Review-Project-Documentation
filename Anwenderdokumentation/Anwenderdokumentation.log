@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.76.0-2013062820 (rev 4627)  (format=lualatex 2015.1.6)  7 JAN 2015 00:47
+This is LuaTeX, Version beta-0.76.0-2013062820 (rev 4627)  (format=lualatex 2015.1.6)  7 JAN 2015 14:14
 **Anwenderdokumentation.tex
 
 (C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Anwenderdokumentatio
@@ -393,14 +393,14 @@ n/Anwenderdokumentation.out)
 \makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks21
 )
-LaTeX Font Info:    Try loading font information for T1+aess on input line 20.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 21.
  ("C:/Program Files/MikTEX/tex/latex/ae/t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 20.
+(Font)              <17.28> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
+(Font)              <12> on input line 21.
  [1
 
 
@@ -418,6 +418,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Kapitel 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 27.
 [3
 
 ]
@@ -426,36 +430,38 @@ Kapitel 2.
 
 ]
 Kapitel 3.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 [5
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
 
 (C:/Users/Phine/Desktop/ILIAS-Review-Project-Documentation/Anwenderdokumentatio
 n/Anwenderdokumentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `Anwenderdokumentation.out' has not changed.
 (rerunfilecheck)             Checksum: 18B9050560954A271BDC8961273F0AC1;1343.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  )
 
 Here is how much of LuaTeX's memory you used:
- 7885 strings out of 494074
+ 7921 strings out of 494074
  100000,552014 words of node,token memory allocated
- 267 words of node memory still in use:
+ 270 words of node memory still in use:
     nodes
-   avail lists: 2:22,3:137,4:423,5:61,6:543,7:8,8:22,9:145,10:65
- 11218 multiletter control sequences out of 65536+200000
- 70 fonts using 1966567 bytes
- 40i,6n,48p,233b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MikTEX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fi
-les/MikTEX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTEX/fon
-ts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on Anwenderdokumentation.pdf (5 pages, 58321 bytes).
+   avail lists: 2:22,3:140,4:420,5:125,6:1856,7:63,8:22,9:145,10:262
+ 11226 multiletter control sequences out of 65536+200000
+ 87 fonts using 2440895 bytes
+ 40i,8n,48p,367b,392s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MikTEX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
+les/MikTEX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MikTEX/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MikTEX/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb><C:/Program Files/MikTEX/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><C:/Program Files/MikTEX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on Anwenderdokumentation.pdf (5 pages, 95229 bytes).
 
-PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 131072)
+PDF statistics: 154 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 131072)
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -14,27 +14,35 @@
 \begin{document}
 
 \title{Anwenderdokumentation}
-
+\subtitle{ILIAS Review Plugin}
+\publishers{Version: 5.0, Status: Fertiggestellt}
 \author{SWT-Gruppe 04\\ \\Auftraggeber: Thordis Kombrink\\Weitere: Dr Birgit Demuth, Professor Wollersheim\\Tutor: Andy P"uschel}
 \maketitle
 \tableofcontents
 
 \chapter{Willkommen}
+Herzlich Willkommen zur Anwenderdokumentation des Review-Plugins für das OpenSource Lernsystem ILIAS der Gruppe 4 entwickelt im Wintersemester 2014/2015. Vielen Dank dass sie sich für unser Plugin interessieren. Die folgenden Seiten sollen Ihnen helfen die Software kennen zu lernen und effektiv zu nutzen. 
 	\section{Einrichtung der Software}
+	Zum Betreiben des Plugins bedarf es eines Webservers auf dem ILIAS in der Version 4.4.5, MySQL in der Version 5.0.11 und PHP in der Version 5.5.11 bereits vollständig installiert ist. Es ist möglich, dass das Review-Plugin auch mit abweichenden Versionen einwandfrei zu benutzen ist.
+Zur Installation müssen 2 Pakete heruntergeladen werden: assReviewableMultipleChoice\footnote{\label{foot:1}https://github.com/daelmo/assReviewableMultipleChoice}	und Review
+\footnote{\label{foot:2}https://github.com/daelmo/Review}. 
+	assReviewableMultipleChoice muss auf dem Webserver in das Verzeichnis ilias/Customizing/plugins/global/Modules/ entpackt werden. Review wird hingegen in /ilias/Customizing/ entpackt.
+	Beide Pakete sind voneinander abhängig und es bedarf beider Pakete um die volle Funktionalität nutzen zu können.
 	\section{Der erste Start}
+	Der Administrator des installierten ILIAS-Systems muss beide Plugins aktivieren. Dazu ist seine Anmeldung in ILIAS notwendig. Unter Administration findet er den Link 'Plugins'. Auf der verlinkten Seite werden alle vorhandenen Plugins angezeigt. Es ist notwendig, dass er Review und assReviewableMultipleChoice aktualisiert und zulässt. //
+	Um das Plugin in einer Gruppe zum reviewen von Fragen nutzen zu können, muss in der Gruppe ein Fragenpool angelegt sein. Desweiteren muss nun ein Reviewpool angelegt werden.//
+	Es ist möglich mehrere Fragenpools als auch Reviewpools zu erstellen, doch ist dies bei Reviewpools nicht zu empfehlen. 
 
 \chapter{Struktur}
-\section{Allgemein}
-\section{Fragenplugin}
 \section{Erstellungsseite der Fragen}
-\section{ReviewPlugin}
-\subsection{eigene \"Ubersichtsseite}	
-\subsection{Erstellungsseite der Reviews}
-\subsection{Review-\"Ubersicht zu einer Frage}
+\section{eigene \"Ubersichtsseite}	
+\section{Erstellungsseite der Reviews}
+\section{Review-\"Ubersicht zu einer Frage}
 
 
 \chapter{Du bist eingeloggt}
 	\section{als Administrator}
+		\subsection{Plugin aktivieren}		
 		\subsection{Reviewpool erstellen}
 		\subsection{Reviews zuteilen}
 	\section{als Nutzer}
