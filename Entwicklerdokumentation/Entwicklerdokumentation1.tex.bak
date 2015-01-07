@@ -25,7 +25,6 @@
 \section{Aufgabenstellung}
 Aufgabe ist es ein Plugin für das freie, internetbasierte Lernsystem ILIAS\footnote{\url{http://www.ilias.de/docu/ilias.php?baseClass=ilrepositorygui&reloadpublic=1&cmd=frameset&ref_id=1}} zu programmieren, um es um eine Review-Möglichkeit der erstellten Fragen zu erweitern. 
 \section{Qualitätsziele}
-\section{Qualitätsziele}
 \begin{tabular}{|c|c|c|c|c|}\hline
 Anforderung & Sehr wichtig & Wichtig & Normal & Irrelevant \\\hline
 Funktionalität &\ding{51}&&&\\\hline
@@ -38,11 +37,11 @@ Effizienz &&&\ding{51}&\\\hline
 Portierbarkeit &&&&\ding{51}\\\hline
 \end{tabular}
 \section{Stakeholder}
-\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{4cm}|}\hline
+\begin{tabular}{|p{3.5cm}|p{2.3cm}|p{3cm}|p{4cm}|}\hline
 Name & Rolle & Beschreibung & Intention \\\hline
 Thordis Kombrink & Kundin & Mitarbeiterin an der Fakultät Informatik, zugehörig zum Lehrstuhl Systems-Engineering & -möchte in ihrer Arbeitsgruppe Ilias nutzen, um Klausuren zu erstellen, mit gereviewten Fragen\\\hline
 Dr. Birgit Demuth & Interessentin & Arbeitet am Lehrstuhl Softwaretechnologie & -Interesse an der Umsetzung, um Ilias unter Umständen an der Fakultät einzusetzen\\\hline
-Prof. Dr. Heinz-Werner Wollersheim & Fachlicher Ansprechpartner & -würde gerne effektiver mit Ilias in seiner Arbeitsgruppe arbeiten, es fehlt aber die Reviewmöglichkeit, die wir erstellen\\\hline
+Prof. Dr. Heinz-Werner Wollersheim & Fachlicher Ansprechpartner & Professor aus Leipzig der sich mit dem Thema (Fragen für Klausuren reviewen) auseinandersetzt & -würde gerne effektiver mit Ilias in seiner Arbeitsgruppe arbeiten, es fehlt aber die Reviewmöglichkeit, die wir erstellen\\\hline
 \end{tabular}
 \chapter{Randbedingungen}
 \section{Technische Randbedingungen}
@@ -95,18 +94,18 @@ Nr. & Anwendungsfall & Nr. & Anfrage & Antwort\\\hline
 \chapter{Lösungsstrategie und Entwurfsentscheidungen}
 \section{Datenbankstruktur}
 
-Folgende Datenbanken werden durch die Plugins erstellt:
-\begin{tabular} {| l | l |}\\\hline
+Folgende Datenbanken werden durch die Plugins erstellt:\\
+\begin{tabular} {| l | l |}\hline
 Name & Beschreibung \\\hline
-qpl_rev_qst & beinhaltet die Taxonomie und die Wissensdimension alles Fragen \\\hline
-rep_robj_xrev_revobj & Standardtabelle für Review-Plugin-Objekte, speichert Gruppen-Id \\\hline
-rep_robj_xrev_quest & speichert Review-spezifische Frage-Informationen \\\hline
-rep_robj_xrev_revi & speichert alle Review-Daten \\\hline
-rep_robj_xrev_taxon & beinhaltet alle Taxonomie-Stufen \\\hline
-rep_robj_xrev_knowd & beinhaltet alle Knowledge-Dimensionen \\\hline
-rep_robj_xrev_rate & beinhaltet Fragen-Bewertungsmöglichkeiten \\\hline
-rep_robj_xrev_eval & beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen \\\hline
-rep_robj_xrev_expert & beinhaltet alle möglichen Expertisen für Reviewern \\\hline
+qpl\textunderscore rev\textunderscore qst & beinhaltet die Taxonomie und die Wissensdimension alles Fragen \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore revobj & Standardtabelle für Review-Plugin-Objekte, speichert Gruppen-Id \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore quest & speichert Review-spezifische Frage-Informationen \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore revi & speichert alle Review-Daten \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore taxon & beinhaltet alle Taxonomie-Stufen \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore knowd & beinhaltet alle Knowledge-Dimensionen \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore rate & beinhaltet Fragen-Bewertungsmöglichkeiten \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore eval & beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen \\\hline
+rep\textunderscore robj\textunderscore xrev\textunderscore expert & beinhaltet alle möglichen Expertisen für Reviewern \\\hline
 \end{tabular}
 
 \section{Reviewbare Frage-Plugin}
@@ -126,11 +125,11 @@ Im Ordner "templates" befinden sich die Template Dateien, die den Content von de
 \subsection{Allgemein}
 Die Struktur des Review-Plugins richtet sich nach der Vorgabe für Repository Object Plugins, weil es gegen diese Plugin-Schnittstelle geschrieben wurde. Die Datei plugin.php definitert die ID des Plugins (xrev) und die kompatiblen ILIAS-Versionen (4.4.xx), außerdem hält sie die aktuelle Version des Review-Plugins fest\\
 Im Unterordner classes befinden sich die Klassen, die ILIAS von einem Repository Object Plugin fordert. Diese müssen dazu jeweils eine plugintypspezifische Oberklasse, die der Funktionalität der betreffenden Klasse entspricht, erweitern. Durch dieses Prinzip können wir sehr viele ILIAS-Komponenten wiederverwenden und erreichen automatisch eine Trennung von Anwendungslogik und Benutzeroberfläche. Die Anwendungslogik steht in der Klasse ilObjReview, die von ilObjectPlugin erbt, und ilObjReviewGUI, das von ilObjectPluginGUI erbt, ist der GUI-Controller (auf beide Klassen wird unten detailliert eingegangen). Die Klasse ilObjReviewAccess, die Zugriffe überprüft, erweitert die ihr zugehörige Oberklasse ilObjectPluginAccess und implementiert als neue Funktionalität im wesentlichen die Überprüfung, ob ein Nutzer tatsächlich berechtigt ist, auf ein von ihm angefordertes Objekt zuzugreifen (siehe dazu den Gliederungspunkt Sicherheit). Um Review-Objekte in der Gruppenübersicht anzeigen zu können, ist die Klasse ilObjReviewListGUI nötig, die von ilObjectPluginListGUI erbt. DIe Grundklasse ilReviewPlugin, die von ilRepositoryObjectPlugin erbt, muss laut Spezifikation nur den Namen des Plugins zurück geben und wurde entsprechend gering gehalten.\\
-Der Unterordner lang enthält die Sprachdateien in der Form ilias_[Sprachkürzel].lang, in denen die Texte der Benutzeroberfläche ausgelagert sind, um den Anforderungen an die Internationalisierung des Plugins gerecht zu werden (siehe dazu den Gliederungspunkt Internationalisierung).\\
+Der Unterordner lang enthält die Sprachdateien in der Form ilias\textunderscore[Sprachkürzel].lang, in denen die Texte der Benutzeroberfläche ausgelagert sind, um den Anforderungen an die Internationalisierung des Plugins gerecht zu werden (siehe dazu den Gliederungspunkt Internationalisierung).\\
 Im Unterverzeichnis sql befindet sich die Datei dbupdate.php, ein Datenbank-Updateskript, das bei jeder neuen Version des Plugins von ILIAS ausgeführt wird. Es beinhaltet das Anlegen aller Tabellen des Plugins in der ILIAS-Datenbank sowie die Füllung derjenigen Tabellen, die Enumerationen darstellen, mit ihren Einträgen.\\
 Der Unterordner Templates enthält die Ordner images und default. In images sind die Icons des Plugins abgelegt, während default Templates für die eigenen GUI-Klassen des Plugins erhält. Jene befinden sich im Verzeichnis classes/GUI und werden unten detailliert erläutert.
 \subsection{Besonderheiten der Anwendungslogik - ilObjReview}
-Diese Klasse repräsentiert ein Review-Objekt, das zusätzlich zu den Attributen seiner Oberklasse noch über eine group_id, die ID der Gruppe in der das Review-Objekt angelegt wurde, verfügt. Das von ilObjectPlugin geerbte Attribut obj_id wird verwendet, um die Daten verschiedener Review-Objekte, die in einer ILIAS-Installation existieren können, in der Datenbank auseinanderhalten zu können.\\
+Diese Klasse repräsentiert ein Review-Objekt, das zusätzlich zu den Attributen seiner Oberklasse noch über eine group\textunderscore id, die ID der Gruppe in der das Review-Objekt angelegt wurde, verfügt. Das von ilObjectPlugin geerbte Attribut obj\textunderscore id wird verwendet, um die Daten verschiedener Review-Objekte, die in einer ILIAS-Installation existieren können, in der Datenbank auseinanderhalten zu können.\\
 Die Klasse ilObjReview.php überschreibt die Methoden doCreate, doRead, doUpdate, doDelete und doClone ihrer Oberklasse, die zur Aktualisierung der Datanbank bei der Erstellung, beim Öffnen, beim Bearbeiten, beim Löschen bzw. beim Klonen eines Review-Objekts aufgerufen werden. Die Methode doCreate liest dazu die Gruppen-ID, die bei der Erstellung eines neuen Repository-Objekts in einer Gruppe von ILIAS als Parameter angehängt wird, aus. Die Methode doRead, die jedes Mal, wenn ein Nutzer auf ein Review-Objekt zugreift, aufgerufen wird, ruft zusätzlich die private Methode syncQuestionDB auf, die die Fragendatenbank von ILIAS an die des Review-Objekts angleicht. Die Methode doDelete scheint von ILIAS nicht aufgerufen zu werden, weshalb auf eine Implementierung verzichtet wurde.\\
 Die Funktionsweise von syncQuestionDB ist die Folgende: zunächst werden alle Fragen aus den Fragepools der Gruppe, in der das Review-Objekt angelegt wurde, und alle Fragen aus der Fragendatenbank des Review-Objektes geladen jeweils in einer Datenstruktur gespeichert. Fragen, die in beiden vorkommen, werden auf ihren Timestamp überprüft; hat die Frage aus dem Fragenpool einen neueren, ist sie seit dem letzten Aufruf des Review-Objekts bearbeitet worden. Dementsprechend wird ihr Zustand auf 0 gesetzt und von den dieser Frage zugeteilten Reviewern werden neue Reviews angefordert (Aufrufe von \$ilDB->update), außerdem werden die Reviewer darüber benachrigtigt (Aufruf von notifyReviewersAboutChange). Ist eine Frage nur in einem Fragepool enthalten, dann wurde sie neu erstellt und wird der Datenbank hinzugefügt (Aufruf von \$ilDB->insert) und die Administratoren werden drüber informiert (Aufruf von notifyAdminsAboutNewQuestion). Ist eine Frage nur in der Datenbank des Review-Objekts vorhanden, dann wurde sie im Fragepool gelöscht und wird nun automatisch mitsamt der zur ihr gehörenden Reviews aus der Datenbank des Review-Objekts entfernt (Aufruf von \$iDB->manipulateF) und die vormaligen Reviewer weden informiert (notifyReviewersAboutDeletion).\\
 Der Großteil der weiteren Methoden sind Datenbankabfragen, die Reviews, Fragen oder andere Datensätze abrufenund als assoziative Arrays zurückgeben. Diese Methoden sind deshalb notwendig, da das Plugin mehrere Anwendungsfälle abdeckt, für welche Daten unter unterschiedlichen Kriterien ausgewählt und formatiert werden müssen. Von besonderer Bedeutung sind die Methoden allocateReviews und storeReviewById. Erstere legt, nachdem der Administrator einer Frage Reviewer zugeordnet hat, leere Review-Datensätze in der Datenbank an und letztere aktualisiert einen solchen Datensatz, nachdem ein Nutzer ein Review-Eingabeformular ausgefüllt hat, um die eingegebenen Daten. Die Methode finishQuestion aktualisiert den Zustand von Fragen, die akzeptiert werden, sodass sie von den anderen Funktionen des Plugins nicht mehr berücksichtigt werden.\\
@@ -153,7 +152,7 @@ Die Review-Ausgabeklasse ilReviewOutputGUI erweitert ebenfalls ilTable2GUI, um R
 \chapter{Laufzeitsicht}
 \chapter{Konzepte}
 \section{Fachliche Strukturen und Modelle}
-\texttt{Analyseklassendiagramm}
+\texttt{Analyseklassendiagramm}\\
 \includegraphics[width=1.0\textwidth]{Class_Diagram__Analyseklassendiagramm.png}
 \label{Analyseklassendiagramm}
 
