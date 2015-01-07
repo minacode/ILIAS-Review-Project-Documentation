@@ -1,0 +1,42 @@
+\select@language {german}
+\contentsline {chapter}{\numberline {1}Einf\IeC {\"u}hrungen und Ziele}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Aufgabenstellung}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Qualit\IeC {\"a}tsziele}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Qualit\IeC {\"a}tsziele}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Stakeholder}{5}{section.1.4}
+\contentsline {chapter}{\numberline {2}Randbedingungen}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Technische Randbedingungen}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Konventionen}{6}{section.2.2}
+\contentsline {chapter}{\numberline {3}Kontextabgrenzung}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Fachlicher Kontext}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Technischer- oder Verteilungskontext}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Externe Schnittstellen}{8}{section.3.3}
+\contentsline {chapter}{\numberline {4}L\IeC {\"o}sungsstrategie und Entwurfsentscheidungen}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Datenbankstruktur}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Reviewbare Frage-Plugin}{12}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Ordnerstruktur}{12}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Review-Plugin}{13}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Allgemein}{13}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Besonderheiten der Anwendungslogik - ilObjReview}{14}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Besonderheiten des GUI-Controllers - ilObjReviewGUI}{15}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Besonderheiten der eigenen GUI-Klassen}{16}{subsection.4.3.4}
+\contentsline {chapter}{\numberline {5}Bausteinsicht}{17}{chapter.5}
+\contentsline {chapter}{\numberline {6}Laufzeitsicht}{18}{chapter.6}
+\contentsline {chapter}{\numberline {7}Konzepte}{19}{chapter.7}
+\contentsline {section}{\numberline {7.1}Fachliche Strukturen und Modelle}{19}{section.7.1}
+\contentsline {section}{\numberline {7.2}Persistenz}{21}{section.7.2}
+\contentsline {section}{\numberline {7.3}Benutzungsoberfl\IeC {\"a}che}{23}{section.7.3}
+\contentsline {section}{\numberline {7.4}Ergonomie}{24}{section.7.4}
+\contentsline {section}{\numberline {7.5}Transaktionsbehandlung}{24}{section.7.5}
+\contentsline {section}{\numberline {7.6}Sessionbehandlung}{24}{section.7.6}
+\contentsline {section}{\numberline {7.7}Sicherheit}{24}{section.7.7}
+\contentsline {section}{\numberline {7.8}Kommunikation und Integration mit anderen IT-Systemen}{24}{section.7.8}
+\contentsline {section}{\numberline {7.9}Verteilung}{24}{section.7.9}
+\contentsline {section}{\numberline {7.10}Plausibilisierung und Validierung}{24}{section.7.10}
+\contentsline {section}{\numberline {7.11}Ausnahme-/Fehlerbehandlung}{25}{section.7.11}
+\contentsline {section}{\numberline {7.12}Logging, Protokollierung, Tracing}{25}{section.7.12}
+\contentsline {section}{\numberline {7.13}Konfigurierbarkeit}{25}{section.7.13}
+\contentsline {section}{\numberline {7.14}Internationalisierung}{25}{section.7.14}
+\contentsline {section}{\numberline {7.15}Testbarkeit}{25}{section.7.15}
+\contentsline {section}{\numberline {7.16}Buildmanagement}{25}{section.7.16}
+\contentsline {chapter}{\numberline {8}Glossar}{26}{chapter.8}

@@ -36,6 +36,7 @@ Korrektheit &&\ding{51}&&\\\hline
 Sicherheit &&&\ding{51}&\\\hline        
 Effizienz &&&\ding{51}&\\\hline
 Portierbarkeit &&&&\ding{51}\\\hline
+\end{tabular}
 \section{Stakeholder}
 \begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{4cm}|}\hline
 Name & Rolle & Beschreibung & Intention \\\hline
@@ -95,18 +96,17 @@ Nr. & Anwendungsfall & Nr. & Anfrage & Antwort\\\hline
 \section{Datenbankstruktur}
 
 Folgende Datenbanken werden durch die Plugins erstellt:
-\begin{tabular} {l | l}
-Name & Beschreibung \\
-\hline
-qpl_rev_qst & beinhaltet die Taxonomie und die Wissensdimension alles Fragen \\
-rep_robj_xrev_revobj & Standardtabelle für Review-Plugin-Objekte, speichert Gruppen-Id \\
-rep_robj_xrev_quest & speichert Review-spezifische Frage-Informationen \\
-rep_robj_xrev_revi & speichert alle Review-Daten \\
-rep_robj_xrev_taxon & beinhaltet alle Taxonomie-Stufen \\
-rep_robj_xrev_knowd & beinhaltet alle Knowledge-Dimensionen \\
-rep_robj_xrev_rate & beinhaltet Fragen-Bewertungsmöglichkeiten \\
-rep_robj_xrev_eval & beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen \\
-rep_robj_xrev_expert & beinhaltet alle möglichen Expertisen für Reviewern \\
+\begin{tabular} {| l | l |}\\\hline
+Name & Beschreibung \\\hline
+qpl_rev_qst & beinhaltet die Taxonomie und die Wissensdimension alles Fragen \\\hline
+rep_robj_xrev_revobj & Standardtabelle für Review-Plugin-Objekte, speichert Gruppen-Id \\\hline
+rep_robj_xrev_quest & speichert Review-spezifische Frage-Informationen \\\hline
+rep_robj_xrev_revi & speichert alle Review-Daten \\\hline
+rep_robj_xrev_taxon & beinhaltet alle Taxonomie-Stufen \\\hline
+rep_robj_xrev_knowd & beinhaltet alle Knowledge-Dimensionen \\\hline
+rep_robj_xrev_rate & beinhaltet Fragen-Bewertungsmöglichkeiten \\\hline
+rep_robj_xrev_eval & beinhaltet Bewertungsmöglichkeiten für einzelne Aspekte der Fragen \\\hline
+rep_robj_xrev_expert & beinhaltet alle möglichen Expertisen für Reviewern \\\hline
 \end{tabular}
 
 \section{Reviewbare Frage-Plugin}
