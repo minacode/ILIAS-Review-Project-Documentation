@@ -172,14 +172,16 @@ Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formati
 \section{Persistenz}
 Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist.
 \section{Benutzungsoberfläche}
-\includegraphics[width=0.99\textwidth]{User_Interface_Modeling_Diagram__InputForm.png}
-\label{Grafische Benutzeroberfläche}\\
+\centering
+\includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__InputForm.png}
+\label{Grafische Benutzeroberfläche}\newpage
 \includegraphics[width=0.99\textwidth]{User_Interface_Modeling_Diagram__Plugin-Objekt.png}
 \label{Grafische Benutzeroberfläche Autor}
 \\
 \includegraphics[width=0.7\textwidth]{User_Interface_Modeling_Diagram__Reviewerzuordnung.png}
 \label{Grafische Benutzeroberfläche Autor}
 \section{Ergonomie}
+\flushleft
 {Peter}
 \section{Transaktionsbehandlung}
 \section{Sessionbehandlung}
