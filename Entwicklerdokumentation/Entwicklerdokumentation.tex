@@ -165,7 +165,9 @@ Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formati
 \includegraphics[width=1.0\textwidth]{Sequence_Diagram__Review_erstellen__Review_erstellen.png}
 \label{Review beenden}
 \section{Persistenz}
-Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist.
+Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist. Alle Daten, die auf den einzelnen Seiten des Plugins dargestellt werden, laden mit mithilfe des Datenbank-Controllers von ILIAS, ilDB, als PHP-Arrays aus der Datenbank. Nutzereingaben werden über diese Schnittstelle ebenfalls direkt in die Datenbank geschrieben.
+\@Julius: "Link: Datenbankanbindung im Development Guide: http://www.ilias.de/docu/goto_docu_pg_25354_42.html"
+\@Julius: "Link: ilDB in der ILIAS-Dokumentation: http://ildoc.hrz.uni-giessen.de/ildoc/Release_4_4_x_branch/html/d1/d20/classilDB.html"
 \section{Benutzungsoberfläche}
 \centering
 \includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__InputForm.png}
@@ -179,17 +181,25 @@ Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie
 \flushleft
 {Peter}
 \section{Transaktionsbehandlung}
+Datenbank-Transaktionen stehen in der von uns genutzten ILIAS-Version 4.4 nicht zur Verfügung und werden deshalb nicht von uns verwendet.
 \section{Sessionbehandlung}
+Die Nutzerinteraktion und Sessionbehandlung werden vom ILIAS-Kernsystem implementiert.
+\@Julius: "Link: User Data im Development Guide: http://www.ilias.de/docu/goto_docu_pg_204_42.html"
+Alle relevanten Daten des aktuellen Nutzers werden über eine Instanz der Klasse ilObjUser bereitgestellt. Diese Schnittstelle verwenden wir, um die ID des aktuellen Nutzers zu erfragen.
+\@Julius: "Link: ilObjUser in der ILIAS-Dokumentation: http://ildoc.hrz.uni-giessen.de/ildoc/Release_4_4_x_branch/html/de/da1/classilObjUser.html"
 \section{Sicherheit}
 Da das Plugin in das ILIAS-System eingebettet ist und die bereits erstellten ILIAS-Komponenten wiederverwendet, gelten dieselben Sicherheitsstandards. Nutzereingaben und Datenbankabfragen werden daher durch ILIAS-Komponenten überprüft und das Plugin passt sich nahtlos in die Benutzerverwaltung von ILIAS und ihr Rechtesystem ein. Eine mögliche Sicherheitslücke in ILIAS ist das Anhängen von IDs als GET-Parameter an die Adresse. Um diese zu schließen, haben wir vor jede Anzeige eines Formulars eine Validierung geschaltet, die überprüft, ob der Nutzer tatsächlich auf das Objekt, welches als GET-Parameter angehängt ist, zugreifen darf. 
 \section{Kommunikation und Integration mit anderen IT-Systemen}
 !!!!!max, lassen sich aus anderen systemen fragen einbinden? wenn ja, schreiben wir das hier hin! :)!!!!
 \section{Verteilung}
+- Hier sollten die zwei Plugins erwähnt werden
+\@Max: "Sollte hier die Erwähnung der verschiedenen Fragetypen, die alle reviewable sein sollen rein? Wenn ja, mach du das mal^^"
 \section{Plausibilisierung und Validierung}
 Wir greifen auf Nutzereingaben mittels der bereits implementieren GUI-Komponenten von ILIAS zu. Diese überprüfen die Nutzereingabe intern und somit transparent für unser Plugin. Die Benutzerauthentifizierung ist ebenfalls von ILIAS gedeckt, lediglich die unter „Sicherheit“ genannte Möglichkeit, dass der Benutzer bei Aufruf eines Formulars den ID-Parameter in der Adressleiste ändert und somit unberechtigt auf Daten zugreift, musste von uns ausgeschlossen werden.
 \section{Ausnahme-/Fehlerbehandlung}
 \section{Logging, Protokollierung, Tracing}
 \section{Konfigurierbarkeit}
+Weder das Review-Plugin noch das Plugin für reviewbare Multiple Choice-Fragen sind konfigurierbar.
 \section{Internationalisierung}
 Das Plugin enthält ein Englisches und ein Deutsches Sprachpaket. Weitere Sprachen lassen sich über die Ilias-Konforme Einbettung\footnote{\url{http://www.ilias.de/docu/ilias.php?ref_id=37&obj_id=8478&from_page=133&cmd=layout&cmdClass=illmpresentationgui&cmdNode=ih&baseClass=ilLMPresentationGUI&obj_id=128}} 
  
