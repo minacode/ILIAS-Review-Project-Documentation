@@ -12,12 +12,12 @@
 \BOOKMARK [1][-]{section.4.2}{4.2 Fachlicher Kontext}{chapter.4}% 12
 \BOOKMARK [1][-]{section.4.3}{4.3 Reviewbare Frage-Plugin}{chapter.4}% 13
 \BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Ordnerstruktur}{section.4.3}% 14
-\BOOKMARK [1][-]{section.4.4}{4.4 Klassen\374bersicht}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.5}{4.5 Review-Plugin}{chapter.4}% 16
-\BOOKMARK [2][-]{subsection.4.5.1}{4.5.1 Allgemein}{section.4.5}% 17
-\BOOKMARK [2][-]{subsection.4.5.2}{4.5.2 Besonderheiten der Anwendungslogik - ilObjReview}{section.4.5}% 18
-\BOOKMARK [2][-]{subsection.4.5.3}{4.5.3 Besonderheiten des GUI-Controllers - ilObjReviewGUI}{section.4.5}% 19
-\BOOKMARK [2][-]{subsection.4.5.4}{4.5.4 Besonderheiten der eigenen GUI-Klassen}{section.4.5}% 20
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Klassen\374bersicht}{section.4.3}% 15
+\BOOKMARK [1][-]{section.4.4}{4.4 Review-Plugin}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Allgemein}{section.4.4}% 17
+\BOOKMARK [2][-]{subsection.4.4.2}{4.4.2 Besonderheiten der Anwendungslogik - ilObjReview}{section.4.4}% 18
+\BOOKMARK [2][-]{subsection.4.4.3}{4.4.3 Besonderheiten des GUI-Controllers - ilObjReviewGUI}{section.4.4}% 19
+\BOOKMARK [2][-]{subsection.4.4.4}{4.4.4 Besonderheiten der eigenen GUI-Klassen}{section.4.4}% 20
 \BOOKMARK [0][-]{chapter.5}{5 Bausteinsicht}{}% 21
 \BOOKMARK [0][-]{chapter.6}{6 Laufzeitsicht}{}% 22
 \BOOKMARK [0][-]{chapter.7}{7 Konzepte}{}% 23

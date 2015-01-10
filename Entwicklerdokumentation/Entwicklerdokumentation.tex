@@ -53,6 +53,7 @@ Es gelten die im 'Ilias-Developement-Guide'\footnote{\url{http://www.ilias.de/do
 \label{Toplevel-Architektur}
 \section{Technischer- oder Verteilungskontext}
 \section{Externe Schnittstellen}
+\newpage
 \texttt{Review}\\
 
 \includegraphics[width=1.0\textwidth]{Use_Case_Diagram__Reviewplugin.png}
@@ -117,17 +118,17 @@ Der Ordner 'sql' beinhält die Datenbank-Verwaltungs-Datei dbupdate.php, in welc
 Im Ordner 'templates' befinden sich die Template Dateien, die den Content von der Multiple Choice Frage übernehmen.\\
 
 
-\section{Klassenübersicht}
+\subsection{Klassenübersicht}
 
 Alle Klassen werden von den Klassen des bereits vorhandenen Fragentyps per Vererbung abgeleitet.\\ 
-assReviewableMultipleChoice:\\
+\texttt{assReviewableMultipleChoice}:\\
 Attribute:\\
 Die Klasse besitzt zwei zusätzliche Attribute für Taxonomie (taxonomy) und Wissensdimension (knowledge\textunderscore dimension).
-Für diese besitzt sie außerdem get- und set-Funktionen, die nach den in Ilias üblichen Regeln benannt sind.
+Für diese besitzt sie außerdem get- und set-Funktionen, die nach den in Ilias üblichen Regeln benannt sind. \\
 
 getQuestionType():
 
-Diese Funktion muss implementiert werden und gibt den Fragentyp als String zurück.
+Diese Funktion muss implementiert werden und gibt den Fragentyp als String zurück.\\
 
 
 Weiterhin wurden die Funktionen zum Laden und Speichern von Fragen aus der Datenbank erweitert, um die Taxonomie und Wissensdimension mit einzubinden.
@@ -150,14 +151,33 @@ Wissensdimension aus der Tabelle qpl\textunderscore rev\textunderscore qst lösc
 
 toJSON():
 
-Da die Frage neuen Attribute hat, muss die Darstellung in JSON um diese Attribute erweitert werden.\\
+Da die Frage neue Attribute hat, muss die Darstellung in JSON um diese Attribute erweitert werden.\\
 
-assReviewableMultipleChoiceGUI:
+\texttt{assReviewableMultipleChoiceGUI}:
+writePostData():\\
+Füllt die Aufklappmenüs Taxonomie('taxonomy') und Wissensdimension('knowledge\textunderscore dimension') gemäß POST mit Werten aus.\\
+
+writeReviewData():\\
+Gibt den POST für die Taxonomie und Wissensdimension zurück.\\
+
+editQuestion():\\
+Wurde lediglich um den Funktionsaufruf von populateTaxonomyFormPart() erweitert und sonst von der Oberklasse übernommen.\\
+
+populateTaxonomyFormPart():\\
+Überprüft, ob das Review-Plugin vorhanden ist und erstellt Aufklappmenüs für die Taxonomie und Wissensdimension.\\
+
+getDefaultTaxonomy()/getDefaultKnowledgeDimension():\\
+Geben ein Array zurück, ausgefüllt mit den Werten für Taxonomie und Wissensdimension, die sie aus der Datenbank des Review-Plugins auslesen.\\
+
+checkAddInput():\\
+Überprüft die Aufklappmenüs Taxonomie und Wissensdimension auf Validität, also ob sie richtig ausgefüllt wurden und nicht der Defaultwert drinsteht.
+
+
 
 \section{Review-Plugin}
 \subsection{Allgemein}
 Die Struktur des Review-Plugins richtet sich nach der Vorgabe für Repository Object Plugins, weil es gegen diese Plugin-Schnittstelle geschrieben wurde. Die Datei plugin.php definitert die ID des Plugins (xrev) und die kompatiblen ILIAS-Versionen (4.4.xx), außerdem hält sie die aktuelle Version des Review-Plugins fest\\
-Im Unterordner classes befinden sich die Klassen, die ILIAS von einem Repository Object Plugin fordert. Diese müssen dazu jeweils eine plugintypspezifische Oberklasse, die der Funktionalität der betreffenden Klasse entspricht, erweitern. Durch dieses Prinzip können wir sehr viele ILIAS-Komponenten wiederverwenden und erreichen automatisch eine Trennung von Anwendungslogik und Benutzeroberfläche. Die Anwendungslogik steht in der Klasse ilObjReview, die von ilObjectPlugin erbt, und ilObjReviewGUI, das von ilObjectPluginGUI erbt, ist der GUI-Controller (auf beide Klassen wird unten detailliert eingegangen). Die Klasse ilObjReviewAccess, die Zugriffe überprüft, erweitert die ihr zugehörige Oberklasse ilObjectPluginAccess und implementiert als neue Funktionalität im wesentlichen die Überprüfung, ob ein Nutzer tatsächlich berechtigt ist, auf ein von ihm angefordertes Objekt zuzugreifen (siehe dazu den Gliederungspunkt Sicherheit). Um Review-Objekte in der Gruppenübersicht anzeigen zu können, ist die Klasse ilObjReviewListGUI nötig, die von ilObjectPluginListGUI erbt. DIe Grundklasse ilReviewPlugin, die von ilRepositoryObjectPlugin erbt, muss laut Spezifikation nur den Namen des Plugins zurück geben und wurde entsprechend gering gehalten.\\
+Im Unterordner classes befinden sich die Klassen, die ILIAS von einem Repository Object Plugin fordert. Diese müssen dazu jeweils eine plugintypspezifische Oberklasse, die der Funktionalität der betreffenden Klasse entspricht, erweitern. Durch dieses Prinzip können wir sehr viele ILIAS-Komponenten wiederverwenden und erreichen automatisch eine Trennung von Anwendungslogik und Benutzeroberfläche. Die Anwendungslogik steht in der Klasse ilObjReview, die von ilObjectPlugin erbt, und ilObjReviewGUI, das von ilObjectPluginGUI erbt, ist der GUI-Controller (auf beide Klassen wird unten detailliert eingegangen). Die Klasse ilObjReviewAccess, die Zugriffe überprüft, erweitert die ihr zugehörige Oberklasse ilObjectPluginAccess und implementiert als neue Funktionalität im wesentlichen die Überprüfung, ob ein Nutzer tatsächlich berechtigt ist, auf ein von ihm angefordertes Objekt zuzugreifen (siehe dazu den Gliederungspunkt Sicherheit). Um Review-Objekte in der Gruppenübersicht anzeigen zu können, ist die Klasse ilObjReviewListGUI nötig, die von ilObjectPluginListGUI erbt. Die Grundklasse ilReviewPlugin, die von ilRepositoryObjectPlugin erbt, muss laut Spezifikation nur den Namen des Plugins zurück geben und wurde entsprechend gering gehalten.\\
 Der Unterordner lang enthält die Sprachdateien in der Form ilias\textunderscore[Sprachkürzel].lang, in denen die Texte der Benutzeroberfläche ausgelagert sind, um den Anforderungen an die Internationalisierung des Plugins gerecht zu werden (siehe dazu den Gliederungspunkt Internationalisierung).\\
 Im Unterverzeichnis sql befindet sich die Datei dbupdate.php, ein Datenbank-Updateskript, das bei jeder neuen Version des Plugins von ILIAS ausgeführt wird. Es beinhaltet das Anlegen aller Tabellen des Plugins in der ILIAS-Datenbank sowie die Füllung derjenigen Tabellen, die Enumerationen darstellen, mit ihren Einträgen.\\
 Der Unterordner Templates enthält die Ordner images und default. In images sind die Icons des Plugins abgelegt, während default Templates für die eigenen GUI-Klassen des Plugins erhält. Jene befinden sich im Verzeichnis classes/GUI und werden unten detailliert erläutert.\\
@@ -180,11 +200,23 @@ ilCheckMatrixRowGUI funktioniert ähnlich, aber für Checkboxen, die für die Re
 ilQuestionFinishTableGUI, ilQuestionTableGUI und ilReviewTableGUI erzeugen jeweils eine tabellanartige Ansicht der zu beendenden Fragen, der Fragen eines Nutzers bzw. der Reviews eines Nutzers anhand der bei der Erstellung übergebenen Datensätze. Dazu erweitern sie die ILIAS-Klasse ilTable2GUI.\\
 ilQuestionOverviewGUI erzeugt lediglich eine Ansicht einer Frage, mit der der Nutzer nicht interagieren kann. Desahlb verwendet sie ausschließlich ein Template und erweitert keine ILIAS-Komponente.\\
 ilReviewInputGUI erzeugt das Review-Eingabeformular. Sie erweitert dazu ilPropertyFormGUI, die Standard-Formularklasse vonn ILIAS und erzeugt sowohl GUI-Elemente, die von ILIAS stammen, als auch eigene. Dazu müssen ihr der betreffende Reviewdatensatz und die Taxonomie der gereviewten Frage übergeben werden, außerdem erwartet sie die vom Plugin definierten Enumerationen als Parameter. Nach Aufruf der Methode setReadOnly können die GUI-Elemente von ilObjReviewGUI deaktiviert werden, sodass diese Klasse für die Review-Ausgabe wiederverwendet werden kann. Die Methode checkInput der Oberklasse wurde überschrieben, um bei den Aufklappmenüs sicherszustellen, dass ein anderer Wert als der default-Wert ausgewählt wurde.\\
-Die Review-Ausgabeklasse ilReviewOutputGUI erweitert ebenfalls ilTable2GUI, um Review-Eingabeformulare in einer Tabelle darzustellen. Diese werden durch Instanzen von ilReviewInputGUI gebildet, die aufgrund eines Aufrufs von setReadOnly nicht mehr bearbeitet werden können. Diese Klasse erwartet zur Konstruktion ein Array von Reviews und ansonsten die gleichen Daten wie ilReviewInputGUI. Zum Erstellen der Ausgabe kann sie dadurch einfach über die gegebenen Reviews iterieren und für jedes von ihnen mit den gegebenen Daten ein Eingabeformular erstellen.
+Die Review-Ausgabeklasse ilReviewOutputGUI erweitert ebenfalls ilTable2GUI, um Review-Eingabeformulare in einer Tabelle darzustellen. Diese werden durch Instanzen von ilReviewInputGUI gebildet, die aufgrund eines Aufrufs von setReadOnly nicht mehr bearbeitet werden können. Diese Klasse erwartet zur Konstruktion ein Array von Reviews und ansonsten die gleichen Daten wie ilReviewInputGUI. Zum Erstellen der Ausgabe kann sie dadurch einfach über die gegebenen Reviews iterieren und für jedes von ihnen mit den gegebenen Daten ein Eingabeformular erstellen.\\
 \chapter{Bausteinsicht}
+\texttt{Entwurfsklassendiagramm}\\
+\includegraphics[width=0.93\textwidth]{Class_Diagram__Entwurfsklassendiagramm.png}
+\label{Entwurfsklassendiagramm}\\
+Das Entwurfsklassendiagramm besteht aus zwei Teilen, dem 'Reviewable Question'-Teil und dem 'Review'-Teil.\\
+\texttt{Reviewable Question:}\\
+Die Klasse 'assReviewableMultipleChoiceExport' erbt von der 'assMultipleChoiceExport' und besitzt die Funktion 'toXML()', die die gleichen Befehle ausführt, wie die 'toXML()'-Methode der Oberklasse, allerdings wurde sie um den Teil erweitert, der dafür sorgt, dass auch die Taxonomien und Wissensdimension exportiert werden und die Methode 'addReviewMetadata()', die die Taxonomien in XML umformt.\\
+'assReviewableMultipleChoiceImport' erbt von der 'assMultipleChoiceImport' und besitzt die Funktion 'fromXML()', welche die gleichen Befehle ausführt, wie die 'fromXML()'-Methode der Oberklasse, allerdings wurde sie um den Teil erweitert, der die Taxonomie und Wissensdimension ausliest.\\ 
+Die Klassen 'ilAssReviewableMultipleChoiceFeedback' und 'ilassReviewableMultipleChoicePlugin' erben von den Oberklassen 'ilAssMultipleChoiceFeedback' und 'ilassMultipleChoicePlugin' und übernehmen all deren Funktionen.\\
+Die Klasse 'assReviewableMultipleChoiceGUI' erbt von 'assMultipleChoiceGUI' und erweitert deren Funktionen '\textunderscore \textunderscore construct()', 'writePostData()' und 'editQuestion()' um die Taxonomie- und Wissensdimension-Angaben. Die Funktion 'populateTaxonomyFormPart()' fügt die Aufklappmenüs für die Taxonomie und Wissensdimension hinzu und übernimmt durch den Aufruf der Funktionen 'getDefaultTaxonomy()' und 'getDefaultKnowledgeDimension()' die Werte, die auch im Review-Plugin genutzt werden\footnote{\texttt{Achtung: Für das Funktionieren dieser Funktion muss das Review-Plugin zwingend installiert sein!}}. Die Funktion 'checkAddInput()' prüft, ob die Aufklappmenüs ordnungsgemäß ausgefüllt wurden und nicht der Default-Wert drin steht.\\
+%max, es wär cool, wenn du hier noch deine Klasse assReviewableMultipleChoice machen würdest!
+
+
 \chapter{Laufzeitsicht}
 Die meisten Objekte, die während der Nutzung des Review- oder des Fragenplugins angelegt werden, werden direkt von ILIAS erzeugt. Dazu gehören vor allem die Hauptklassen, beim Reviewplugin im Ordner Review/classes abgelegt, zu denen auch die Anwendungslogik (ilObjReview) und der GUI-Controller (ilObjReviewGUI) zählen. ILIAS ruft dann auf diesen Objekten zahlreiche Methoden auf, wobei der wohl häufigste Fall die Methode performCommand des GUI-Controllers (ilObjReviewGUI) ist, die auf einen Befehl des Nutzers (z.B. Klick auf einen Button) folgt und ihrerseits wieder eine Methode von ilObjReviewGUI aufruft. Weitere verwendete Objekte sind die globalen ILIAS-Objekte, die auch vom ILIAS-System erzeugt werden und von den Plugins referenziert werden können. Eine Erläuterung Wirkungsweise dieses Systems würde den Rahmen einer Dokumentation des Systems sprengen und ist für das Verständnis Laufzeitsicht auf die Plugins nicht nötig, weshalb an dieser Stelle auf den ILIAS Development Guide \footnote{\url{http://www.ilias.de/docu/goto_docu_pg_29964_42.html}} verwiesen wird.\\
-Am Beispiel der Methode saveFinishQuestions der Klasse ilObjReviewGUI, die immer dann aufgerufen wird, wenn ein Administrator den Abschluss der Reviewphase für eine Frage speichert, soll die Kommunikation der Plugin-Objekte untereinander und mit den globalen ILIAS-Objekten gezeigt werden.
+Am Beispiel der Methode saveFinishQuestions der Klasse ilObjReviewGUI, die immer dann aufgerufen wird, wenn ein Administrator den Abschluss der Reviewphase für eine Frage speichert, soll die Kommunikation der Plugin-Objekte untereinander und mit den globalen ILIAS-Objekten gezeigt werden.\\
 \includegraphics[width=1.0\textwidth]{Sequence_Diagram__saveFinishQuestions__saveFinishQuestions.png}
 \label{Fertige Fragen Speichern}\\ 
 Dabei werden aus Gründen der Übersichtlichkeit nur Methodenaufrufe, die direkt vom GUI-Controller ilObjReviewGUI vorgenommen werden, dargestellt. Die Instanz Anwendungsklasse (ilObjReview) steht dem GUI-Controller als Referenz im Attribut object zur Verfügung. Auf die globalen ILIAS-Variablen wird durch deren Variablennamen zugegriffen, nachdem sie mithilfe des 'global'-Statements von PHP als solche deklariert wurden. Diese Form der Kommunikation von Objekten ist auf alle anderen Methoden aller Klassen unserer Plugins übertragbar.\\
@@ -209,18 +241,18 @@ Nachdem der Autor eine Frage erstellt hat, kann er ein Review anfordern. Dadurch
 \texttt{Review abschließen}\\
 Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formatiert und abgespeichert. Im Anschluss wird der Autor informiert, dass ein neues Review vorhanden ist.\\
 
-\includegraphics[width=1.0\textwidth]{Sequence_Diagram__Review_erstellen__Review_erstellen.png}
+\includegraphics[width=0.9\textwidth]{Sequence_Diagram__Review_erstellen__Review_erstellen.png}
 \label{Review beenden}
 \section{Persistenz}
-Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist. Alle Daten, die auf den einzelnen Seiten des Plugins dargestellt werden, laden mit mithilfe des Datenbank-Controllers von ILIAS, ilDB, als PHP-Arrays aus der Datenbank. Nutzereingaben werden über diese Schnittstelle ebenfalls direkt in die Datenbank geschrieben.
-Datenbankanbindung im Development Guide: \url{http://www.ilias.de/docu/goto_docu_pg_25354_42.html}
+Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist. Alle Daten, die auf den einzelnen Seiten des Plugins dargestellt werden, laden mit mithilfe des Datenbank-Controllers von ILIAS, ilDB, als PHP-Arrays aus der Datenbank. Nutzereingaben werden über diese Schnittstelle ebenfalls direkt in die Datenbank geschrieben.\\
+Datenbankanbindung im Development Guide: \url{http://www.ilias.de/docu/goto_docu_pg_25354_42.html}\\
 ilDB in der ILIAS-Dokumentation: \url{http://ildoc.hrz.uni-giessen.de/ildoc/Release_4_4_x_branch/html/d1/d20/classilDB.html}
 \section{Benutzungsoberfläche}
 \centering
 \includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__InputForm.png}
 \label{Grafische Benutzeroberfläche}\newpage
 \includegraphics[width=0.99\textwidth]{User_Interface_Modeling_Diagram__Plugin-Objekt.png}
-\label{Grafische Benutzeroberfläche Autor}
+\label{Grafische Benutzeroberfläche Review}
 \\
 \includegraphics[width=0.7\textwidth]{User_Interface_Modeling_Diagram__Reviewerzuordnung.png}
 \label{Grafische Benutzeroberfläche Autor}
@@ -230,9 +262,9 @@ ilDB in der ILIAS-Dokumentation: \url{http://ildoc.hrz.uni-giessen.de/ildoc/Rele
 \section{Transaktionsbehandlung}
 Datenbank-Transaktionen stehen in der von uns genutzten ILIAS-Version 4.4 nicht zur Verfügung und werden deshalb nicht von uns verwendet.
 \section{Sessionbehandlung}
-Die Nutzerinteraktion und Sessionbehandlung werden vom ILIAS-Kernsystem implementiert.
-User Data im Development Guide: \url{http://www.ilias.de/docu/goto_docu_pg_204_42.html}
-Alle relevanten Daten des aktuellen Nutzers werden über eine Instanz der Klasse ilObjUser bereitgestellt. Diese Schnittstelle verwenden wir, um die ID des aktuellen Nutzers zu erfragen.
+Die Nutzerinteraktion und Sessionbehandlung werden vom ILIAS-Kernsystem implementiert.\\
+User Data im Development Guide: \url{http://www.ilias.de/docu/goto_docu_pg_204_42.html}\\
+Alle relevanten Daten des aktuellen Nutzers werden über eine Instanz der Klasse ilObjUser bereitgestellt. Diese Schnittstelle verwenden wir, um die ID des aktuellen Nutzers zu erfragen.\\
 ilObjUser in der ILIAS-Dokumentation: \url{http://ildoc.hrz.uni-giessen.de/ildoc/Release_4_4_x_branch/html/de/da1/classilObjUser.html}
 \section{Sicherheit}
 Da das Plugin in das ILIAS-System eingebettet ist und die bereits erstellten ILIAS-Komponenten wiederverwendet, gelten dieselben Sicherheitsstandards. Nutzereingaben und Datenbankabfragen werden daher durch ILIAS-Komponenten überprüft und das Plugin passt sich nahtlos in die Benutzerverwaltung von ILIAS und ihr Rechtesystem ein. Eine mögliche Sicherheitslücke in ILIAS ist das Anhängen von IDs als GET-Parameter an die Adresse. Um diese zu schließen, haben wir vor jede Anzeige eines Formulars eine Validierung geschaltet, die überprüft, ob der Nutzer tatsächlich auf das Objekt, welches als GET-Parameter angehängt ist, zugreifen darf. 
