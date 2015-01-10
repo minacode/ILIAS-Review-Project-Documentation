@@ -22,29 +22,38 @@
 
 \chapter{Willkommen}
 Herzlich Willkommen zur Anwenderdokumentation des Review-Plugins für das OpenSource Lernsystem ILIAS der Gruppe 4 entwickelt im Wintersemester 2014/2015. Vielen Dank dass sie sich für unser Plugin interessieren. Die folgenden Seiten sollen Ihnen helfen die Software kennen zu lernen und effektiv zu nutzen. 
-	\section{Einrichtung der Software}
-	Zum Betreiben des Plugins bedarf es eines Webservers auf dem ILIAS in der Version 4.4.5, MySQL in der Version 5.0.11 und PHP in der Version 5.5.11 bereits vollständig installiert ist. Es ist möglich, dass das Review-Plugin auch mit abweichenden Versionen einwandfrei zu benutzen ist.
-Zur Installation müssen 2 Pakete heruntergeladen werden: assReviewableMultipleChoice\footnote{\label{foot:1}https://github.com/daelmo/assReviewableMultipleChoice}	und Review
-\footnote{\label{foot:2}https://github.com/daelmo/Review}. 
+
+\section{Grundsätze dieser Dokumentation}
+Diese Dokumentation beschreibt nur die Funktionalitäten, die das Team selbst bereit stellt, um ein Reviewplugin für ILIAS zu ermöglichen. Informationen zur Installation von ILIAS, zur dessen Handhabung und standardmäßig ILIAS-eigene Funktionanlitäten sind in der umfassenden Benutzerdokumentation
+\footnote{\label{foot:1}http://www.ilias.de/docu/goto\_docu\_cat\_3866.html} von ILIAS nachzulesen . 
+
+\section{Einrichtung der Software}
+Zum Betreiben des Plugins bedarf es eines Webservers auf dem ILIAS in der Version 4.4.5, MySQL in der Version 5.0.11 und PHP in der Version 5.5.11 bereits vollständig installiert ist. Es ist möglich, dass das Review-Plugin auch mit abweichenden Versionen einwandfrei zu benutzen ist.
+Zur Installation müssen 2 Pakete heruntergeladen werden: assReviewableMultipleChoice\footnote{\label{foot:2}https://github.com/daelmo/assReviewableMultipleChoice}	und Review
+\footnote{\label{foot:3}https://github.com/daelmo/Review}. 
 	assReviewableMultipleChoice muss auf dem Webserver in das Verzeichnis ilias/Customizing/plugins/global /Modules/TestQuestionPool/Questions/ entpackt werden. Review wird hingegen in /ilias/Customizing/global/plugins/Services/Repository/RepositoryObject/ entpackt.
-	Beide Pakete sind voneinander abhängig und es bedarf beider Pakete um die volle Funktionalität nutzen zu können.
-	\section{Der erste Start}
-	Der Administrator des installierten ILIAS-Systems muss beide Plugins aktivieren. Dazu ist seine Anmeldung in ILIAS notwendig. Unter Administration findet er den Link 'Plugins'. Auf der verlinkten Seite werden alle vorhandenen Plugins angezeigt. Es ist notwendig, dass er Review und assReviewableMultipleChoice aktualisiert und zulässt. //
-	Um das Plugin in einer Gruppe zum reviewen von Fragen nutzen zu können, muss in der Gruppe ein Fragenpool angelegt sein. Desweiteren muss nun ein Reviewpool angelegt werden.//
+	Beide Pakete sind voneinander abhängig und es bedarf beider Pakete um das Plugin nutzen zu können.
+	
+\section{Der erste Start}
+Der Administrator des installierten ILIAS-Systems muss beide Plugins aktivieren. Dazu ist seine Anmeldung in ILIAS notwendig. Unter Administration findet er den Link 'Plugins'. Auf der verlinkten Seite werden alle vorhandenen Plugins angezeigt. Es ist notwendig, dass er Review und assReviewableMultipleChoice aktualisiert und zulässt. \\
+	Um das Plugin in einer Gruppe zum reviewen von Fragen nutzen zu können, muss in der Gruppe ein Fragenpool angelegt sein. Desweiteren muss nun ein Reviewpool angelegt werden.\\
 	Es ist möglich mehrere Fragenpools als auch Reviewpools zu erstellen, doch ist dies bei Reviewpools nicht zu empfehlen. 
 
 \chapter{Struktur}
+
 \section{Erstellungsseite der Fragen}
 Die Seite trifft man im Fragenpool an, wenn eine neue reviewbare Frage erstellt werden soll. Sie sieht der Seite zum Erstellen einfacher Multiple Choice-Fragen sehr ähnlich. Zusätzlich gibt der Nutzer nur den kognitiven Prozess an, sowie die Wissensdimension in die er die Frage einordnet. 
+
 \section{eigene \"Ubersichtsseite}
 In jedem Reviewpool findet der Nutzer als erstes eine Übersicht in Form von zwei Tabellen an, mit der er einen Überblick über seine bereits geschriebenen und noch ausstehenden Reviews erhält. 	
+
 \section{Erstellungsseite der Reviews}
 Beim Erstellen eines Reviews erhält man eine Übersicht über die Frage, die reviewt werden soll, dabei ist der Ersteller der Frage anonym. Allein der Administrator kann diesen einsehen.
 Auf die Frage folgt das Review-Eingabeformular mit einer Reihe von Checkboxen die ausgefüllt werden müssen um die erstellte Frage einzuschätzen. Es wird eine schriftliche Bemerkung verlangt, warum die Frage akzeptiert, abgelehnt wird oder überarbeitet werden muss.
 Anschließend wird die selbst eingeschätzte Expertise angegeben und das Review kann abgesendet werden.
 
 \section{Reviewansicht}
-Die Seite sieht der zum Erstellen von reviews sehr ähnlich. Der einzige Unterschied ist, dass die eingetragenen Werte nicht mehr zu bearbeiten sind. Es ist ebenfalls eine Fragenansicht sichtbar, sowie  eine Reihe an Dropdown-Listen und das Bemerkungsfeld. 
+Die Seite sieht der zum Erstellen von Reviews sehr ähnlich. Der einzige Unterschied ist, dass die eingetragenen Werte nicht mehr zu bearbeiten sind. Es ist ebenfalls eine Fragenansicht sichtbar, sowie  eine Reihe an Dropdown-Listen und das Bemerkungsfeld. 
 
 \section{Reviewer Zuordnungsseite}
 Diese Seite ist dem Administrator bestimmt. Zusehen ist eine Tabelle in der horizontal alle Mitglieder dieser Gruppe gelistet und vertikal alle zu reviewenden Fragen gelistet sind. Um die Fragen einem Mitglied zuzuordnen müssen die Checkboxen  entsprechender Zeile und Spalte angeklickt werden. 
@@ -54,24 +63,38 @@ Hier werden alle fertig gereviewten Fragen gelistet, damit ein Administrator sie
 
 
 \chapter{Sie sind eingeloggt}
-	\section{als Administrator}
-		\subsection{Reviewpool erstellen}
-		Reviewpools werden üblicherweise in Gruppen erstellt. Neben dem Reviewpool muss ein Fragenpool existieren, denn für Reviews sind reviewbare Fragen notwendig. Um einen Reviewpool zu erstellen klickt man auf den grünen Button 'Neues Objekt hinzuf"ugen'. Eine Übersicht öffnet sich. Wählen Sie ganz rechts unten unter 'Weitere' Review aus. Eine Seite öffnet sich, die Sie um einen Titel und eine Beschreibung für das Review-Objekt fragt. Füllen sie beides aus und klicken sie final auf 'Review hinzufügen'.
-		\subsection{Reviews zuteilen}
-		Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Reviewer Zuordnung'. Wählen Sie in der Tabelle die Checkboxen mit den passenden Zeile und Spalte an und klicken Sie auf 'Reviews anfordern' um die Reviewer zu benachrichtigen und Ihre Einstellung zu speichern.
-		\subsection{Vollständige Reviews freigeben}
-		Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Vollst"andig gereviewte Fragen'. W"ahlen Sie in der Liste der fertig gereviewten Fragen die Fragen, die Sie freigeben m"ochten an und klicken Sie rechts auf den Button 'Akzeptieren'. Die Fragen stehen Ihnen von nun an zum Erstellen von Tests mit ILIAS zur Verfügung.
-		\subsection{Eigenschaften des Reviewpools bearbeiten}
-		Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Eigenschaften'. Bearbeiten Sie gegebenenfalls Titel und Beschreibung des Reviewpools und klicken auf 'Speichern'. 
-		\subsection{Rechte bearbeiten}
-		Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Rechte'. Mit einem Dropdown-Feld kann man die Rollen auswählen für die die Rechte bearbeitet werden sollen. In der Tabelle darunter können Sie den ausgewählten Rollen Berechtigungen durch das Anklicken von Checkboxen verteilen. Klicken Sie auf 'Speichern' um Ihre gesetzten Einstellungen zu setzen. 
-	\section{als Nutzer}
-		\subsection{Review erstellen}
-		Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Um ein Review erstellen zu können, muss vorher eine Reviewbare Frage erstellt worden sein.
-		
-		\subsection{Frage erstellen}
-		\subsection{Review einsehen}
-		\subsection{Tags setzen}
-		\subsection{Informationen abrufen Reviewpool}
 
+\section{als Administrator}
+	
+\subsection{Reviewpool erstellen}
+Reviewpools werden üblicherweise in Gruppen erstellt. Neben dem Reviewpool muss ein Fragenpool existieren, denn für Reviews sind reviewbare Fragen notwendig. Um einen Reviewpool zu erstellen klickt man auf den grünen Button 'Neues Objekt hinzuf"ugen'. Eine Übersicht öffnet sich. Wählen Sie ganz rechts unten unter 'Weitere' Review aus. Eine Seite öffnet sich, die Sie um einen Titel und eine Beschreibung für das Review-Objekt fragt. Füllen sie beides aus und klicken sie final auf 'Review hinzufügen'.
+		
+\subsection{Reviews zuteilen}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Reviewer Zuordnung'. Wählen Sie in der Tabelle die Checkboxen mit den passenden Zeile und Spalte an und klicken Sie auf 'Reviews anfordern' um die Reviewer zu benachrichtigen und Ihre Einstellung zu speichern.
+		
+\subsection{Vollständige Reviews freigeben}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Vollst"andig gereviewte Fragen'. W"ahlen Sie in der Liste der fertig gereviewten Fragen die Fragen, die Sie freigeben m"ochten an und klicken Sie rechts auf den Button 'Akzeptieren'. Die Fragen stehen Ihnen von nun an zum Erstellen von Tests mit ILIAS zur Verfügung.
+		
+\subsection{Eigenschaften des Reviewpools bearbeiten}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Eigenschaften'. Bearbeiten Sie gegebenenfalls Titel und Beschreibung des Reviewpools und klicken auf 'Speichern'. 
+		
+\subsection{Rechte bearbeiten}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln Sie nun von dem Reiter 'Inhalt' zu 'Rechte'. Mit einem Dropdown-Feld kann man die Rollen auswählen für die die Rechte bearbeitet werden sollen. In der Tabelle darunter können Sie den ausgewählten Rollen Berechtigungen durch das Anklicken von Checkboxen verteilen. Klicken Sie auf 'Speichern' um Ihre gesetzten Einstellungen zu setzen. 
+		
+\section{als Nutzer}
+	
+\subsection{Review erstellen}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Um ein Review erstellen zu können, muss vorher eine reviewbare Frage erstellt worden sein. Wenn Ihnen eine Frage zu reviewen zugeordnet werden, dann finden Sie sie in der unteren Tabelle namens 'Meine Reviews'. Klicken Sie auf Review erstellen, füllen Sie die Seite aus und speichern Sie es. 		
+		
+\subsection{Frage erstellen}
+Wählen Sie über 'Magazin' Ihren Fragenpool aus und betreten Sie ihn. Unter der Reiterleiste finden Sie den Button 'Frage erstellen'. Folgen Sie ihm und wählen Sie auf der folgenden Seite 'Reviewbare Multiple Choice Frage'. Klicken Sie auf 'Erstellen' und füllen Sie die folgende Seite aus. Der Prozess sieht dem üblichen Frageerstellungsprozess von ILIAS sehr ähnlich. 
+		
+\subsection{Review einsehen}
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Falls Sie bereits Reviews verfasst haben sollten, so finden Sie sie in der unteren Tabelle namens 'Meine Reviews'. Wollen Sie jedoch Reviews zu von Ihnen gestellten Fragen einsehen, so finden Sie diese in der unteren Tabelle namens 'Meine Fragen'.
+		
+\subsection{Frage exportieren}
+Wählen Sie über 'Magazin' Ihren Fragenpool aus und betreten Sie ihn. Anschließend wählen Sie die Checkboxen der zu exportierenden Fragen aus. Wählen Sie aus der Dropdown-liste 'Exportieren' aus und klicken Sie auf 'Ausführen'. Der Download eines ZIP-Archivs sollte Ihnen angeboten werden. Speichern Sie dieses.
+		
+\subsection{Frage importieren}
+Wählen Sie über 'Magazin' Ihren Fragenpool aus und betreten Sie ihn. Klicken Sie auf 'Importieren' rechts an der Seite bei der Auflistung von Fragen im Pool. Übergeben Sie ILIAS eine valide Datei. 
 \end{document}
