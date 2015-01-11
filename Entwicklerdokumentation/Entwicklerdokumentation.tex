@@ -205,7 +205,7 @@ Die Review-Ausgabeklasse ilReviewOutputGUI erweitert ebenfalls ilTable2GUI, um R
 \texttt{Entwurfsklassendiagramm}\\
 \includegraphics[width=0.93\textwidth]{Class_Diagram__Entwurfsklassendiagramm.png}
 \label{Entwurfsklassendiagramm}\\
-Das Entwurfsklassendiagramm besteht aus zwei Teilen, dem 'Reviewable Question'-Teil und dem 'Review'-Teil.\\
+Das Entwurfsklassendiagramm besteht aus zwei Teilen, dem 'Reviewable Question'-Teil und dem 'Review'-Teil. Daneben ist noch eine Vielzahl an ILIAS-Klassen eingetragen, die alle Methoden enthalten, die von unseren Plugins aufgerufen werden. Lediglich auf grundlegende GUI-Komponenten wie beispielsweise Texteingabefelder wurde aus Gründen der Übersichtlichkeit verzichtet. Die Plugins können getrennt voneinander betrachtet werden, da die Interaktionen zwischen ihnen allein aus statischen Methodenaufrufen und Datenbankabfragen bestehen, die in einem Entwurfsklassendiagramm nicht dargestellt werden.\\
 \texttt{Reviewable Question:}\\
 Die Klasse 'assReviewableMultipleChoiceExport' erbt von der 'assMultipleChoiceExport' und besitzt die Funktion 'toXML()', die die gleichen Befehle ausführt, wie die 'toXML()'-Methode der Oberklasse, allerdings wurde sie um den Teil erweitert, der dafür sorgt, dass auch die Taxonomien und Wissensdimension exportiert werden und die Methode 'addReviewMetadata()', die die Taxonomien in XML umformt.\\
 'assReviewableMultipleChoiceImport' erbt von der 'assMultipleChoiceImport' und besitzt die Funktion 'fromXML()', welche die gleichen Befehle ausführt, wie die 'fromXML()'-Methode der Oberklasse, allerdings wurde sie um den Teil erweitert, der die Taxonomie und Wissensdimension ausliest.\\ 
