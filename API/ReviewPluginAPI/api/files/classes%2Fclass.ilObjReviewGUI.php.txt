@@ -23,6 +23,7 @@
 
 include_once 'Modules/TestQuestionPool/classes/class.assQuestionGUI.php';
 include_once("./Services/Repository/classes/class.ilObjectPluginGUI.php");
+include_once './Services/Form/classes/class.ilCustomInputGUI.php';
 include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'Review')->getDirectory() .
 				 "/classes/GUI/class.ilReviewOutputGUI.php");
 include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'Review')->getDirectory() .
@@ -31,7 +32,6 @@ include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'R
 				 "/classes/GUI/class.ilReviewTableGUI.php");
 include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'Review')->getDirectory() .
 				 "/classes/GUI/class.ilQuestionTableGUI.php");
-include_once './Services/Form/classes/class.ilCustomInputGUI.php';
 include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'Review')->getDirectory() .
 				 "/classes/GUI/class.ilCheckMatrixRowGUI.php");
 include_once(ilPlugin::getPluginObject(IL_COMP_SERVICE, 'Repository', 'robj', 'Review')->getDirectory() .
@@ -78,12 +78,16 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 	/**
 	* Handles all commmands of this class, centralizes permission checks
 	*
-	* @param string		command		command to be performed by this class
+	* @param string		$cmd		command to be performed by this class
 	*/
 	function performCommand($cmd) {
 		switch ($cmd) {
 			case "editProperties":
 			case "updateProperties":
+			case "allocateReviews":
+			case "saveAllocateReviews":
+			case "finishQuestions":
+			case "saveFinishQuestions":
 				$this->checkPermission("write");
 				$this->$cmd();
 				break;
@@ -126,9 +130,11 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 		// standard info screen tab
 		$this->addInfoTab();
 
-		// a "properties" tab
+		// tabs to edit properties and run the review cycle
 		if ($ilAccess->checkAccess("write", "", $this->object->getRefId())) {
 			$ilTabs->addTab("properties", $this->txt("properties"), $ilCtrl->getLinkTarget($this, "editProperties"));
+			$ilTabs->addTab("allocation", $this->txt("reviewer_allocation"), $ilCtrl->getLinkTarget($this, "allocateReviews"));
+			$ilTabs->addTab("finish", $this->txt("finished_questions"), $ilCtrl->getLinkTarget($this, "finishQuestions"));
 		}
 
 		// standard epermission tab
@@ -136,7 +142,7 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 	}
 
 	/**
-	* Edit plugin object properties and reviewer allocation
+	* Edit plugin object properties
 	*/
 	function editProperties() {
 		global $tpl, $ilTabs;
@@ -144,11 +150,77 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 		$ilTabs->activateTab("properties");
 		$this->initPropertiesForm();
 		$this->getPropertiesValues();
+		
+		$this->initQuestionFinishForm();
+		$tpl->setContent($this->form->getHTML());
+	}
+	
+	/**
+	* Input reviewer allocation
+	*/
+	function allocateReviews() {
+		global $tpl, $ilTabs;
+		
+		$ilTabs->activateTab("allocation");
 		$this->initReviewAllocForm();
 		$this->alloc_form->setValuesByPost();
+		$tpl->setContent($this->alloc_form->getHTML());
+	}
+	
+	/**
+	* Check and save reviewer allocation
+	*/
+	function saveAllocateReviews() {
+		global $tpl, $ilTabs, $lng, $ilCtrl;
+		
+		$ilTabs->activateTab("allocation");
+		$this->initReviewAllocForm();
+		if ($this->alloc_form->checkInput()) {
+			$rows = array();
+			foreach ($this->alloc_form->getItems() as $item) {
+				if (!method_exists($item, "getPostVars"))
+					continue;
+				$row_postvars = $item->getPostVars();
+				$row_values = array();
+				foreach ($row_postvars as $row_postvar)
+					$row_values[$row_postvar] = $this->alloc_form->getInput($row_postvar);
+				$rows[] = array("q_id" => $item->getQuestionId(), "reviewers" => $row_values);
+			}
+			$this->object->allocateReviews($rows);
+			$this->object->notifyReviewersAboutAllocation($rows);
+			ilUtil::sendSuccess($lng->txt("msg_obj_modified"), true);
+			$ilCtrl->redirect($this, "allocateReviews");
+		}
+		$this->alloc_form->setValuesByPost();
+		$tpl->setContent($this->alloc_form->getHTML());
+	}
+	
+	/**
+	* Accept allocation
+	*/
+	public function finishQuestions() {
+		global $tpl, $ilTabs;
+		
+		$ilTabs->activateTab("finish");
 		$this->initQuestionFinishForm();
-		$tpl->setContent($this->form->getHTML()."<br><hr><br>".$this->alloc_form->getHTML().
-							  "<br><hr><br>".$this->finish_form->getHTML());
+		$tpl->setContent($this->finish_form->getHTML());
+	}
+	
+	/**
+	* Check and perform finishing of questions
+	*/
+	public function saveFinishQuestions() {
+		global $tpl, $ilTabs, $lng, $ilCtrl;
+		
+		$ilTabs->activateTab("finish");
+		$this->initQuestionFinishForm();
+		if (count($_POST["q_id"] > 0)) {
+			$this->object->finishQuestions($_POST["q_id"]);
+			$this->object->notifyAuthorsAboutAcceptance($_POST["q_id"]);
+			ilUtil::sendSuccess($lng->txt("msg_obj_modified"), true);
+			$ilCtrl->redirect($this, "finishQuestions");
+		}
+		$tpl->setContent($this->finish_form->getHTML());
 	}
 
 	/**
@@ -177,7 +249,7 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 			$this->alloc_form->addItem($matrix_row);
 		}
 		
-		$this->alloc_form->addCommandButton("updateProperties", $this->txt("request"));
+		$this->alloc_form->addCommandButton("saveAllocateReviews", $this->txt("request"));
 	}
 	
 	/**
@@ -186,7 +258,7 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 	public function initQuestionFinishForm() {
 		global $ilCtrl;
 		
-		$this->finish_form = new ilQuestionFinishTableGUI($this, "updateProperties", $this->object->loadReviewedQuestions());
+		$this->finish_form = new ilQuestionFinishTableGUI($this, "saveFinishQuestions", $this->object->loadReviewedQuestions());
 	}
 	
 	/**
@@ -236,39 +308,7 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 			$ilCtrl->redirect($this, "editProperties");
 		}
 		$this->form->setValuesByPost();
-		
-		$performed = false;
-		
-		$this->initReviewAllocForm();
-		if ($this->alloc_form->checkInput()) {
-			$rows = array();
-			foreach ($this->alloc_form->getItems() as $item) {
-				if (!method_exists($item, "getPostVars"))
-					continue;
-				$row_postvars = $item->getPostVars();
-				$row_values = array();
-				foreach ($row_postvars as $row_postvar)
-					$row_values[$row_postvar] = $this->alloc_form->getInput($row_postvar);
-				$rows[] = array("q_id" => $item->getQuestionId(), "reviewers" => $row_values);
-			}
-			$this->object->allocateReviews($rows);
-			$performed = true;
-			
-		}
-		$this->alloc_form->setValuesByPost();
-		
-		$this->initQuestionFinishForm();
-		if (count($_POST["q_id"] > 0)) {
-			$this->object->finishQuestions($_POST["q_id"]);
-			$performed = true;
-		}
-		
-		if ($performed) {
-			ilUtil::sendSuccess($lng->txt("msg_obj_modified"), true);
-			$ilCtrl->redirect($this, "editProperties");
-		}
-				
-		$tpl->setContent($this->form->getHtml() . "<br><hr><br>" . $this->alloc_form->getHTML());
+		$tpl->setContent($this->form->getHtml());
 	}
 
 	/**
@@ -288,12 +328,14 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 	* Display review input form
 	*/
 	public function inputReview() {
-		global $tpl, $ilTabs, $ilCtrl;		
+		global $tpl, $ilTabs, $ilCtrl, $lng, $ilPluginAdmin;		
 		$ilTabs->activateTab("content");
+		if (!ilObjReviewAccess::checkAccessToObject($_GET["r_id"], "", "inputReview", "review")) {
+			ilUtil::sendFailure($lng->txt("rep_robj_xrev_no_access"), true);
+			$ilCtrl->redirect($this, "showContent");
+		}
 		$ilCtrl->setParameter($this, "r_id", $_GET["r_id"]);
 		$ilCtrl->setParameter($this, "q_id", $_GET["q_id"]);
-		$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
-		$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
 		$input = new ilReviewInputGUI($this, "showContent", $this->object->loadReviewById($_GET["r_id"]),
 												$this->object->loadQuestionTaxonomyData($_GET["q_id"]),
 												$this->object->taxonomy(),
@@ -302,19 +344,27 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 												$this->object->rating(),
 												$this->object->evaluation()
 						 );
-		$tpl->setContent($quest->getHTML() . $input->getHTML());
+		if ($ilPluginAdmin->isActive(IL_COMP_MODULE, "TestQuestionPool", "qst", "assReviewableMultipleChoice")) {
+			$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
+			$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
+			$tpl->setContent($quest->getHTML().$input->getHtml());
+		}
+		else 
+			$tpl->setContent($input->getHtml());
 	}
 	
 	/*
 	* Save review input
 	*/
 	public function saveReview() {
-		global $tpl, $ilTabs, $lng, $ilCtrl;
+		global $tpl, $ilTabs, $lng, $ilCtrl, $ilPluginAdmin;
 		$ilTabs->activateTab("content");
+		if (!ilObjReviewAccess::checkAccessToObject($_GET["r_id"], "", "saveReview", "review")) {
+			ilUtil::sendFailure($lng->txt("rep_robj_xrev_no_access"), true);
+			$ilCtrl->redirect($this, "showContent");
+		}
 		$ilCtrl->setParameter($this, "r_id", $_GET["r_id"]);
 		$ilCtrl->setParameter($this, "q_id", $_GET["q_id"]);
-		$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
-		$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
 		$input = new ilReviewInputGUI($this, "showContent", $this->object->loadReviewById($_GET["r_id"]),
 												$this->object->loadQuestionTaxonomyData($_GET["q_id"]),
 												$this->object->taxonomy(),
@@ -329,26 +379,32 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 			foreach ($post_vars as $post_var)
 				$form_data[$post_var] = $input->getInput($post_var);
 			$this->object->storeReviewById($_GET["r_id"], $form_data);
+			$this->object->notifyAuthorAboutCompletion($_GET["r_id"]);
 			ilUtil::sendSuccess($lng->txt("msg_obj_modified"), true);
 			$ilCtrl->redirect($this, "showContent");
 		}
-		else {
-			// ilUtil::sendFailure($lng->txt("form_input_not_valid"));
-			$ilCtrl->setParameter($this, "r_id", $_GET["r_id"]);			
-			// $ilCtrl->redirect($this, "inputReview");
-		}
+		else
+			$ilCtrl->setParameter($this, "r_id", $_GET["r_id"]);
 		$input->setValuesByPost();
-		$tpl->setContent($quest->getHTML() . $input->getHtml());
+		if ($ilPluginAdmin->isActive(IL_COMP_MODULE, "TestQuestionPool", "qst", "assReviewableMultipleChoice")) {
+			$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
+			$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
+			$tpl->setContent($quest->getHTML().$input->getHtml());
+		}
+		else 
+			$tpl->setContent($input->getHtml());
 	}
 
 	/**
 	* Output reviews
 	*/
 	public function showReviews() {
-		global $tpl, $ilTabs;		
+		global $tpl, $ilTabs, $ilCtrl, $lng, $ilPluginAdmin;
+		if (!ilObjReviewAccess::checkAccessToObject($_GET[substr($_GET["origin"], 0, 1)."_id"], "", "showReviews", $_GET["origin"])) {
+			ilUtil::sendFailure($lng->txt("rep_robj_xrev_no_access"), true);
+			$ilCtrl->redirect($this, "showContent");
+		}		
 		$ilTabs->activateTab("content");
-		$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
-		$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
 		$tbl = new ilReviewOutputGUI($this, "showReviews", $this->object->loadReviewsByQuestion($_GET["q_id"]),
 											  $this->object->loadQuestionTaxonomyData($_GET["q_id"]),
 					  						  $this->object->taxonomy(),
@@ -357,7 +413,13 @@ class ilObjReviewGUI extends ilObjectPluginGUI {
 											  $this->object->rating(),
 											  $this->object->evaluation()
 					  );
-		$tpl->setContent($quest->getHTML().$tbl->getHtml());
+		if ($ilPluginAdmin->isActive(IL_COMP_MODULE, "TestQuestionPool", "qst", "assReviewableMultipleChoice")) {
+			$q_gui = assQuestionGUI::_getQuestionGUI("", $_GET["q_id"]);
+			$quest = new ilQuestionOverviewGUI($this, $q_gui->getPreview(true), $this->object->loadQuestionMetaData($_GET["q_id"]));
+			$tpl->setContent($quest->getHTML().$tbl->getHtml());
+		}
+		else 
+			$tpl->setContent($tbl->getHtml());
 	}
 }
 ?>

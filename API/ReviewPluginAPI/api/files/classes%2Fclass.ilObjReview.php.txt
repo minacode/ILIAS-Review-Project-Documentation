@@ -26,17 +26,19 @@ include_once("./Services/Repository/classes/class.ilObjectPlugin.php");
 /**
 * Application class for Review repository object.
 *
+* @var	integer		$group_id		id of the group the plugin object belongs to
+*
 * @author Richard Mörbitz <Richard.Moerbitz@mailbox.tu-dresden.de>
 *
 * $Id$
 */
 class ilObjReview extends ilObjectPlugin {
+	private $group_id;	
+	
 	/**
 	* Constructor
-	*
-	* @access	public
 	*/
-	function __construct($a_ref_id = 0) {
+	public function __construct($a_ref_id = 0) {
 		parent::__construct($a_ref_id);
 	}
 	
@@ -52,12 +54,13 @@ class ilObjReview extends ilObjectPlugin {
 	* Create object
 	*/
 	function doCreate() {
-		global $ilDB;
+		global $ilDB, $ilCtrl;
 		
-		$ilDB->manipulate("INSERT INTO rep_robj_xrev_revobj ".
-			"(id, group_id) VALUES (".
-			$ilDB->quote($this->getId(), "integer"). ", ". $ilDB->quote($_GET["ref_id"], "integer").
-			")");
+		$ilDB->insert("rep_robj_xrev_revobj",
+						  array("id" => array("integer", $this->getId()),
+								  "group_id" => array("integer", $ilCtrl->getParameterArrayByClass("ilrepositorygui")["ref_id"])
+						  )
+		);
 	}
 	
 	/**
@@ -66,9 +69,10 @@ class ilObjReview extends ilObjectPlugin {
 	function doRead() {
 		global $ilDB;
 		
-		$set = $ilDB->query("SELECT * FROM rep_robj_xrev_revobj ".
-			" WHERE id = ".$ilDB->quote($this->getId(), "integer")
-			);
+		$set = $ilDB->queryF("SELECT * FROM rep_robj_xrev_revobj WHERE id=%s",
+									array("integer"),
+									array($this->getId())
+				 );
 		while ($rec = $ilDB->fetchAssoc($set)) {
 			$this->obj_id = $rec["obj_id"];
 			$this->group_id = $rec["group_id"];
@@ -82,44 +86,41 @@ class ilObjReview extends ilObjectPlugin {
 	*/
 	function doUpdate() {
 		global $ilDB;
+		
+		$ilDB->update("rep_robj_xrev_revobj",
+						  array("group_id" => array("integer", $this->getGroupId())),
+						  array("id" => array("integer", $this->getId()))
+		);
 	}
 	
 	/**
 	* Delete data from db
 	*/
 	function doDelete() {
-		global $ilDB;
-		
-		$res = $ilDB->queryF("SELECT rep_robj_xrev_revobj.id FROM rep_robj_xrev_revobj ".
-									"INNER JOIN object_reference ON object_reference.obj_id=rep_robj_xrev_revobj.id ".
-									"WHERE object_reference.ref_id=%s",
-									$_GET["item_ref_id"]);
-		
-		if ($id = $ilDB->fetchAssoc($res));		
-		
-		$ilDB->manipulate("DELETE FROM rep_robj_xrev_revobj WHERE ".
-			" id = ".$ilDB->quote($id, "integer")
-			);
-			
-		$ilDB->manipulate("INSERT INTO rep_robj_xrev_revobj ".
-			"(id, group_id) VALUES (0, 'Hello World')");	
-		
-		$ilDB->delete("rep_robj_xrev_revi", array("review_obj" => array("integer", $id)));
-		$ilDB->delete("rep_robj_xrev_quest", array("review_obj" => array("integer", $id)));
-		
+		// pointless, it seems this function is not called by ILIAS
 	}
 	
 	/**
 	* Do Cloning
 	*/
-	function doClone($a_target_id,$a_copy_id,$new_obj) {
-		global $ilDB;
-		
+	function doClone($a_target_id, $a_copy_id, $new_obj) {
+		$new_obj->setGroupId($this->getGroupId());
 		$new_obj->update();
 	}
 	
+	
+	/**
+	* Get the id of the group this object belongs to
+	*/
 	public function getGroupId() {
 		return $this->group_id;
+	}
+	
+	/**
+	* Set the id of the group this object belongs to
+	*/
+	public function setGroupId($group_id) {
+		$this->group_id = $group_id;
 	}
 		
 	/**
@@ -127,7 +128,7 @@ class ilObjReview extends ilObjectPlugin {
 	* thus updating the plugin´s question db
 	*/
 	private function syncQuestionDB() {
-		global $ilDB, $ilUser;		
+		global $ilDB, $ilUser, $ilPluginAdmin;		
 		
 		function cmp_rec($a, $b) {
 			if ($a["question_id"] > $b["question_id"])
@@ -139,10 +140,12 @@ class ilObjReview extends ilObjectPlugin {
 		
 		// uncomment as soos as needed
 		// $ilDB->lockTables(array("qpl_questions", "rep_robj_xrev_quest"));
-		
+		if (!$ilPluginAdmin->isActive(IL_COMP_MODULE, "TestQuestionPool", "qst", "assReviewableMultipleChoice"))
+			return;
 		$qpl = $ilDB->queryF("SELECT qpl_questions.question_id AS question_id, tstamp FROM qpl_questions ".
 								   "INNER JOIN object_reference ON object_reference.obj_id=qpl_questions.obj_fi ".
 								   "INNER JOIN crs_items ON crs_items.obj_id=object_reference.ref_id ".
+								   "INNER JOIN qpl_rev_qst ON qpl_rev_qst.question_id=qpl_questions.question_id ".
 								   "WHERE crs_items.parent_id=%s AND qpl_questions.original_id IS NULL",
 								   array("integer"),
 								   array($this->getGroupId()));
@@ -159,26 +162,38 @@ class ilObjReview extends ilObjectPlugin {
 			foreach ($pl_questions as $pl_question) {
 				if ($db_question["question_id"] == $pl_question["question_id"]) {
 					if ($db_question["tstamp"] > $pl_question["timestamp"]) {
-						$ilDB->manipulateF("UPDATE rep_robj_xrev_quest SET timestamp=%s WHERE question_id=%s AND review_obj=%s",
-												 array("integer", "integer", "integer"),
-												 array($db_question["tstamp"], $db_question["question_id"], $this->getId()));
-					$ilDB->manipulateF("UPDATE rep_robj_xrev_revi SET state=0 WHERE question_id=%s AND review_obj=%s",
-											 array("integer", "integer"),
-											 array($db_question["question_id"], $this->getId()));
-					break;
+						$ilDB->update("rep_robj_xrev_quest",
+										  array("timestamp" => array("integer", $db_question["tstamp"])),
+										  array("question_id" => array("integer", $db_question["question_id"]),
+										  		  "review_obj" => array("integer", $this->getId())
+										  )
+						);
+						$ilDB->update("rep_robj_xrev_revi",
+										  array("state" => array("integer", 0)),
+										  array("question_id" => array("integer", $db_question["question_id"]),
+										  		  "review_obj" => array("integer", $this->getId())
+										  )
+						);
+						$this->notifyReviewersAboutChange($db_question);
+						break;
 					}
 				}
 			}
 		}
 		
-		$new_questions = array_udiff($db_questions, $pl_questions, "cmp_rec");
-		foreach ($new_questions as $new_question)
-			$ilDB->manipulateF("INSERT INTO rep_robj_xrev_quest (id, question_id, timestamp, state, review_obj) VALUES (%s, %s, %s, %s, %s)",
-									 array("integer", "integer", "integer", "integer", "integer"),
-									 array($ilDB->nextId("rep_robj_xrev_quest"), $new_question["question_id"], $new_question["tstamp"], 0, $this->getId()));			
-		
-		$del_questions = array_udiff($pl_questions, $db_questions, "cmp_rec");
-		foreach ($del_questions as $del_question) {
+		foreach (array_udiff($db_questions, $pl_questions, "cmp_rec") as $new_question) {
+			$ilDB->insert("rep_robj_xrev_quest", array("id" => array("integer", $ilDB->nextId("rep_robj_xrev_quest")),
+															 		 "question_id" => array("integer", $new_question["question_id"]),
+															 		 "timestamp" => array("integer", $new_question["tstamp"]),
+															 		 "state" => array("integer", 0),
+															  		 "review_obj" => array("integer", $this->getId())
+															 )
+			);
+			$this->notifyAdminsAboutNewQuestion($new_question);
+		}
+
+		foreach (array_udiff($pl_questions, $db_questions, "cmp_rec") as $del_question) {
+			$this->notifyReviewersAboutDeletion($del_question);
 			$ilDB->manipulateF("DELETE FROM rep_robj_xrev_quest WHERE question_id=%s AND review_obj=%s",
 									 array("integer", "integer"),
 									 array($del_question["question_id"], $this->getId()));
@@ -260,8 +275,8 @@ class ilObjReview extends ilObjectPlugin {
 	/*
 	* Update data of an existing review by form input
 	*
-	* @param		$id			ID of the review to be updated
-	* @param		$form_data	user input to be stored
+	* @param		int		$id			ID of the review to be updated
+	* @param		array		$form_data	user input to be stored
 	*/
 	public function storeReviewByID($id, $form_data) {
 		global $ilDB;
@@ -362,33 +377,28 @@ class ilObjReview extends ilObjectPlugin {
 			foreach ($row["reviewers"] as $reviewer_id => $checked) {
 				if (!$checked)
 					continue;
-				$ilDB->manipulateF("INSERT INTO rep_robj_xrev_revi (id, ".
-																					 "timestamp, ".
-																					 "reviewer, ".
-																					 "question_id, ".
-																					 "state, ".
-																					 "desc_corr, ".
-																					 "desc_relv, ".
-																					 "desc_expr, ".
-																					 "quest_corr, ".
-																					 "quest_relv, ".
-																					 "quest_expr, ".
-																					 "answ_corr, ".
-																					 "answ_relv, ".
-																					 "answ_expr, ".
-																					 "taxonomy, ".
-																					 "knowledge_dimension, ".
-																					 "rating, ".
-																					 "eval_comment, ".
-																					 "expertise, ".
-																					 "review_obj) ".
-									 "VALUES (%s, %s, %s, %s, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, %s)",
-									 array("integer", "integer", "integer", "integer", "integer"),
-									 array($ilDB->nextID("rep_robj_xrev_revi"),
-									 		 time(), 
-									 		 explode("_", $reviewer_id)[2], 
-									 		 $row["q_id"], 
-									 		 $this->getId()));
+				$ilDB->insert("rep_robj_xrev_revi", array("id" => array("integer", $ilDB->nextID("rep_robj_xrev_revi")),
+																		"timestamp" => array("integer", time()),
+																		"reviewer" => array("integer", explode("_", $reviewer_id)[2]),
+																		"question_id" => array("integer", $row["q_id"]),
+																		"state" => array("integer", 0),
+																		"desc_corr" => array("integer", 0),
+																		"desc_relv" => array("integer", 0),
+																		"desc_expr" => array("integer", 0),
+																		"quest_corr" => array("integer", 0),
+																		"quest_relv" => array("integer", 0),
+																		"quest_expr" => array("integer", 0),
+																		"answ_corr" => array("integer", 0),
+																		"answ_relv" => array("integer", 0),
+																		"answ_expr" => array("integer", 0),
+																		"taxonomy" => array("integer", 0),
+																		"knowledge_dimension" => array("integer", 0),
+																		"rating" => array("integer", 0),
+																		"eval_comment" => array("clob", ''),
+																		"expertise" => array("integer", 0),
+																		"review_obj" => array("integer", $this->getId())
+								  								)
+				);
 				$ilDB->update("rep_robj_xrev_quest", array("state" => array("integer", 1)),
 								  array("question_id" => array("integer", $row["q_id"]), "review_obj" => array("integer", $this->getId())));
 			}
@@ -535,7 +545,9 @@ class ilObjReview extends ilObjectPlugin {
 	* @return	array		$question	$question taxonomy data as an associative array
 	*/
 	public function loadQuestionTaxonomyData($q_id) {
-		global $ilDB;
+		global $ilDB, $ilPluginAdmin;
+		if (!$ilPluginAdmin->isActive(IL_COMP_MODULE, "TestQuestionPool", "qst", "assReviewableMultipleChoice"))
+			return array();
 		$req = $ilDB->queryF("SELECT qpl_rev_qst.taxonomy, qpl_rev_qst.knowledge_dimension ".
 									"FROM qpl_rev_qst ".
 									"WHERE qpl_rev_qst.question_id=%s",
@@ -543,6 +555,134 @@ class ilObjReview extends ilObjectPlugin {
 									array($q_id)
 						  );
 		return $ilDB->fetchAssoc($req);
+	}
+	
+	/**
+	* Prepare message output to inform reviewers about
+	* their allocation to a certain question
+	*
+	* @param		array			$alloc_matrix			array of arrays of reviewers
+	*/
+	public function notifyReviewersAboutAllocation($alloc_matrix) {
+		$receivers = array();
+		foreach ($alloc_matrix as $row)
+			foreach ($row["reviewers"] as $reviewer_id => $checked)
+				if ($checked)
+					$receivers[] = explode("_", $reviewer_id)[2];
+		$this->performNotification($receivers, "msg_review_requested");
+	}
+	
+	/**
+	* Prepare message output to inform authors about
+	* the acceptance of a certain question by the group´s admin
+	*
+	* @param		array			$question_ids			array of the ids of the accepted question
+	*/
+	public function notifyAuthorsAboutAcceptance($question_ids) {
+		global $ilDB;
+		$receivers = array();
+		foreach ($question_ids as $id)
+			$receivers[] = $ilDB->fetchAssoc($ilDB->queryF("SELECT owner FROM qpl_questions WHERE question_id=%s",
+																		  array("integer"),
+																		  array($id)
+																 )
+										 )["owner"];
+		$this->performNotification($receivers, "msg_question_accepted");
+	}
+	
+	/**
+	* Prepare message output to inform an author about
+	* the completion of a review on a certain question
+	*
+	* @param		integer			$review_id			id of the completed review
+	*/
+	public function notifyAuthorAboutCompletion($review_id) {
+		global $ilDB;
+		$rev = $ilDB->queryF("SELECT owner FROM qpl_questions ".
+									"INNER JOIN rep_robj_xrev_revi ON rep_robj_xrev_revi.question_id=qpl_questions.question_id ".
+									"WHERE rep_robj_xrev_revi.id=%s",
+									array("integer"),
+									array($review_id)
+						  );
+		$receivers = array();
+		while ($receiver = $ilDB->fetchAssoc($rev))
+			$receivers[] = $receiver["owner"];
+		$this->performNotification($receivers, "msg_review_completed");
+	}
+	
+	/**
+	* Prepare message output to inform reviewers about
+	* a change of a certain question they have to review
+	*
+	* @param		array			$question			question data as an associative array
+	*/
+	public function notifyReviewersAboutChange($question) {
+		global $ilDB;
+		$res = $ilDB->queryF("SELECT reviewer FROM rep_robj_xrev_revi ".
+									"WHERE review_obj=%s AND question_id=%s",
+									array("integer", "integer"),
+									array($this->getId(), $question["question_id"])
+						  );
+		$receivers = array();
+		while ($receiver = $ilDB->fetchAssoc($res))
+			$receivers[] = $receiver["reviewer"];
+		$this->performNotification($receivers, "msg_question_edited");
+	}
+	
+	/**
+	* Prepare message output to inform the group´s admins about
+	* the creation of a new question
+	*
+	* @param		array			$question			question data as an associative array
+	*/
+	public function notifyAdminsAboutNewQuestion($question) {
+		global $ilDB;
+		$res = $ilDB->queryF("SELECT usr_id FROM rbac_ua ".
+									"INNER JOIN object_data ON object_data.obj_id=rbac_ua.rol_id ".
+								   "WHERE object_data.title='il_grp_admin_%s'",
+								   array("integer"),
+								   array($this->getGroupId())
+						  );
+		$receivers = array();
+		while ($receiver = $ilDB->fetchAssoc($res))
+			$receivers[] = $receiver["usr_id"];
+		$this->performNotification($receivers, "msg_question_created");
+	}
+	
+	/**
+	* Prepare message output to inform reviewers about
+	* the deletion of a question they had to review
+	*
+	* @param		array			$question			question data as an associative array
+	*/
+	public function notifyReviewersAboutDeletion($question) {
+		global $ilDB;
+		$res = $ilDB->queryF("SELECT reviewer FROM rep_robj_xrev_revi ".
+									"WHERE review_obj=%s AND question_id=%s",
+									array("integer", "integer"),
+									array($this->getId(), $question["question_id"])
+						  );
+		$receivers = array();
+		while ($receiver = $ilDB->fetchAssoc($res))
+			$receivers[] = $receiver["reviewer"];
+		$this->performNotification($receivers, "msg_question_deleted");
+	}
+	
+	/**
+	* Created and send an ILIAS message based on data prepared by this object´s notify... methods
+	*
+	* @param		array			$receivers			array of user ids corresponding to the receivers of the message
+	* @param		string		$message_type		the kind of information to be sent
+	*/
+	private function performNotification($receivers, $message_type) {
+		include_once "./Services/Notification/classes/class.ilSystemNotification.php";
+		$ntf = new ilSystemNotification();
+		$ntf->setObjId($this->getId());
+		$ntf->setLangModules(array("rep_robj_xrev"));
+		$ntf->setSubjectLangId("rep_robj_xrev_".$message_type."_subj");
+		$ntf->setIntroductionLangId("rep_robj_xrev_".$message_type."_intr");
+		
+		$ntf->sendMail($receivers);
 	}
 }
 ?>

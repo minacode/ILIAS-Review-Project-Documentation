@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">133</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">98</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,19 +136,17 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-49401490"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-258576118"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-49401490" class="accordion-body collapse in">
+            <div id="namespace-258576118" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
                                                                                                     <li class="class"><a href="../classes/ilAspectHeadGUI.html">ilAspectHeadGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilAspectListGUI.html">ilAspectListGUI</a></li>
                                                     <li class="class"><a href="../classes/ilAspectSelectInputGUI.html">ilAspectSelectInputGUI</a></li>
                                                     <li class="class"><a href="../classes/ilCheckMatrixRowGUI.html">ilCheckMatrixRowGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilExampleConfigGUI.html">ilExampleConfigGUI</a></li>
                                                     <li class="class"><a href="../classes/ilObjReview.html">ilObjReview</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewAccess.html">ilObjReviewAccess</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewGUI.html">ilObjReviewGUI</a></li>
@@ -204,6 +202,10 @@ application classes to fulfill certain tasks.</p>
                                                                     <a href="../classes/ilObjReviewGUI.html#method_getStandardCmd" class="">getStandardCmd()</a><br />
                                                                     <a href="../classes/ilObjReviewGUI.html#method_setTabs" class="">setTabs()</a><br />
                                                                     <a href="../classes/ilObjReviewGUI.html#method_editProperties" class="">editProperties()</a><br />
+                                                                    <a href="../classes/ilObjReviewGUI.html#method_allocateReviews" class="">allocateReviews()</a><br />
+                                                                    <a href="../classes/ilObjReviewGUI.html#method_saveAllocateReviews" class="">saveAllocateReviews()</a><br />
+                                                                    <a href="../classes/ilObjReviewGUI.html#method_finishQuestions" class="">finishQuestions()</a><br />
+                                                                    <a href="../classes/ilObjReviewGUI.html#method_saveFinishQuestions" class="">saveFinishQuestions()</a><br />
                                                                     <a href="../classes/ilObjReviewGUI.html#method_initReviewAllocForm" class="">initReviewAllocForm()</a><br />
                                                                     <a href="../classes/ilObjReviewGUI.html#method_initQuestionFinishForm" class="">initQuestionFinishForm()</a><br />
                                                                     <a href="../classes/ilObjReviewGUI.html#method_initPropertiesForm" class="">initPropertiesForm()</a><br />
@@ -343,16 +345,16 @@ screens) and ilInfoScreenGUI (handles the info screen).</li>
             <article class="method">
                 <h3 class="public ">performCommand()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">performCommand(  <span class="argument">$cmd</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">performCommand(string  <span class="argument">$cmd</span>) </pre>
                 <p><em>Handles all commmands of this class, centralizes permission checks</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$cmd </td>
-                                <td></td>
+                                <td><p>command to be performed by this class</p></td>
                             </tr>
                                             </table>
                 
@@ -456,7 +458,111 @@ screens) and ilInfoScreenGUI (handles the info screen).</li>
                 <h3 class="public ">editProperties()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">editProperties() </pre>
-                <p><em>Edit plugin object properties and reviewer allocation</em></p>
+                <p><em>Edit plugin object properties</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_allocateReviews" name="method_allocateReviews" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">allocateReviews()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">allocateReviews() </pre>
+                <p><em>Input reviewer allocation</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_saveAllocateReviews" name="method_saveAllocateReviews" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">saveAllocateReviews()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">saveAllocateReviews() </pre>
+                <p><em>Check and save reviewer allocation</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_finishQuestions" name="method_finishQuestions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">finishQuestions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">finishQuestions() </pre>
+                <p><em>Accept allocation</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_saveFinishQuestions" name="method_saveFinishQuestions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">saveFinishQuestions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">saveFinishQuestions() </pre>
+                <p><em>Check and perform finishing of questions</em></p>
                 
 
                 
@@ -784,7 +890,7 @@ screens) and ilInfoScreenGUI (handles the info screen).</li>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 20th, 2014 at 15:51.
+                    on January 12th, 2015 at 12:00.
                 </section>
             </section>
         </section>

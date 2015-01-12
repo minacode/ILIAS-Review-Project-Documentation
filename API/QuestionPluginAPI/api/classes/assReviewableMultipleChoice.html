@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">57</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">44</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1452127694"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-175886032"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1452127694" class="accordion-body collapse in">
+            <div id="namespace-175886032" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -148,6 +148,7 @@
                                                     <li class="class"><a href="../classes/assReviewableMultipleChoiceExport.html">assReviewableMultipleChoiceExport</a></li>
                                                     <li class="class"><a href="../classes/assReviewableMultipleChoiceGUI.html">assReviewableMultipleChoiceGUI</a></li>
                                                     <li class="class"><a href="../classes/assReviewableMultipleChoiceImport.html">assReviewableMultipleChoiceImport</a></li>
+                                                    <li class="class"><a href="../classes/assReviewableMultipleChoiceTest.html">assReviewableMultipleChoiceTest</a></li>
                                                     <li class="class"><a href="../classes/ilAssReviewableMultipleChoiceFeedback.html">ilAssReviewableMultipleChoiceFeedback</a></li>
                                                     <li class="class"><a href="../classes/ilassReviewableMultipleChoicePlugin.html">ilassReviewableMultipleChoicePlugin</a></li>
                                             </ul>
@@ -329,51 +330,51 @@
             <article class="method">
                 <h3 class="public ">_construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">_construct(  <span class="argument">$title = &quot;&quot;</span>,   <span class="argument">$comment = &quot;&quot;</span>,   <span class="argument">$author = &quot;&quot;</span>,   <span class="argument">$owner = -1</span>,   <span class="argument">$question = &quot;&quot;</span>,   <span class="argument">$output_type = OUTPUT_ORDER</span>,   <span class="argument">$taxonomy = &quot;&quot;</span>,   <span class="argument">$knowledge_dimension = &quot;&quot;</span>) </pre>
-                <p><em></em></p>
-                
+                <pre class="signature" style="margin-right: 54px;">_construct(string  <span class="argument">$title = &quot;&quot;</span>, string  <span class="argument">$comment = &quot;&quot;</span>, string  <span class="argument">$author = &quot;&quot;</span>, integer  <span class="argument">$owner = -1</span>, string  <span class="argument">$question = &quot;&quot;</span>, integer|string  <span class="argument">$output_type = OUTPUT_ORDER</span>, integer  <span class="argument">$taxonomy = &quot;&quot;</span>, integer  <span class="argument">$knowledge_dimension = &quot;&quot;</span>) </pre>
+                <p><em>assReviewableMultipleChoice constructor</em></p>
+                <p>The constructor takes possible arguments an creates an instance of the assReviewableMultipleChoice object.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$title </td>
-                                <td></td>
+                                <td><p>A title string to describe the question</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$comment </td>
-                                <td></td>
+                                <td><p>A comment string to describe the question</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$author </td>
-                                <td></td>
+                                <td><p>A string containing the name of the questions author</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$owner </td>
-                                <td></td>
+                                <td><p>A numerical ID to identify the owner/creator</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$question </td>
-                                <td></td>
+                                <td><p>The question string of the multiple choice question</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer|string</td>
                                 <td>$output_type </td>
-                                <td></td>
+                                <td><p>The output order of the multiple choice answers</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$taxonomy </td>
-                                <td></td>
+                                <td><p>The taxonomy of the question</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>integer</td>
                                 <td>$knowledge_dimension </td>
-                                <td></td>
+                                <td><p>The knowledge dimension of the question</p></td>
                             </tr>
                                             </table>
                 
@@ -570,14 +571,14 @@
             <article class="method">
                 <h3 class="public ">saveToDb()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">saveToDb(  <span class="argument">$original_id = &quot;&quot;</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">saveToDb(string  <span class="argument">$original_id = &quot;&quot;</span>) </pre>
+                <p><em>Overwritten function to save question to the database</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$original_id </td>
                                 <td></td>
                             </tr>
@@ -604,16 +605,16 @@
             <article class="method">
                 <h3 class="public ">loadFromDb()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">loadFromDb(  <span class="argument">$question_id</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">loadFromDb(string  <span class="argument">$question_id</span>) </pre>
+                <p><em>Function to load data from the database</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$question_id </td>
-                                <td></td>
+                                <td><p>The id of target question</p></td>
                             </tr>
                                             </table>
                 
@@ -638,16 +639,16 @@
             <article class="method">
                 <h3 class="public ">delete()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">delete(  <span class="argument">$question_id</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">delete(string  <span class="argument">$question_id</span>) </pre>
+                <p><em>Function to delete the question</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$question_id </td>
-                                <td></td>
+                                <td><p>The id of target question</p></td>
                             </tr>
                                             </table>
                 
@@ -673,7 +674,7 @@
                 <h3 class="public ">toJSON()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">toJSON() </pre>
-                <p><em></em></p>
+                <p><em>Function to convert the question to JSONn</em></p>
                 
 
                 
@@ -698,14 +699,14 @@
             <article class="method">
                 <h3 class="private ">saveReviewDataToDb()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">saveReviewDataToDb(  <span class="argument">$original_id = &quot;&quot;</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">saveReviewDataToDb(string  <span class="argument">$original_id = &quot;&quot;</span>) </pre>
+                <p><em>Function to save taxonomy and knowledge dimension to the database</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$original_id </td>
                                 <td></td>
                             </tr>
@@ -732,16 +733,16 @@
             <article class="method">
                 <h3 class="private ">loadReviewDataFromDb()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">loadReviewDataFromDb(  <span class="argument">$question_id = &quot;&quot;</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">loadReviewDataFromDb(string  <span class="argument">$question_id = &quot;&quot;</span>) </pre>
+                <p><em>Function to load taxonomy and knowledge dimension from the database</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$question_id </td>
-                                <td></td>
+                                <td><p>The id of target question</p></td>
                             </tr>
                                             </table>
                 
@@ -809,7 +810,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 20th, 2014 at 15:53.
+                    on January 12th, 2015 at 12:03.
                 </section>
             </section>
         </section>

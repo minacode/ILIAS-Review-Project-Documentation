@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">133</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">98</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,19 +136,17 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-45845296"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-399399351"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-45845296" class="accordion-body collapse in">
+            <div id="namespace-399399351" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
                                                                                                     <li class="class"><a href="../classes/ilAspectHeadGUI.html">ilAspectHeadGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilAspectListGUI.html">ilAspectListGUI</a></li>
                                                     <li class="class"><a href="../classes/ilAspectSelectInputGUI.html">ilAspectSelectInputGUI</a></li>
                                                     <li class="class"><a href="../classes/ilCheckMatrixRowGUI.html">ilCheckMatrixRowGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilExampleConfigGUI.html">ilExampleConfigGUI</a></li>
                                                     <li class="class"><a href="../classes/ilObjReview.html">ilObjReview</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewAccess.html">ilObjReviewAccess</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewGUI.html">ilObjReviewGUI</a></li>
@@ -178,7 +176,7 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>ilCheckMatrixRowGUI</h1>
-                    <p><em></em></p>
+                    <p><em>GUI, a row of checkboxes in the question-reviewer allocation matrix</em></p>
                     
                     
                                         
@@ -255,6 +253,15 @@
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                var
+                            </th>
+                            <td>
+                                                                    <p>$_POST variables of each checkbox</p>
+                                                                    <p>id of the question corresponding to the matrix row</p>
+                                                            </td>
+                        </tr>
                                             <tr>
                             <th>
                                 author
@@ -338,8 +345,8 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$question</span>,   <span class="argument">$reviewer_ids</span>) </pre>
-                <p><em>Constructor for table-like display of ilSelectInputGUIs</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$question</span>, array  <span class="argument">$reviewer_ids</span>) </pre>
+                <p><em>Constructor for a line in a table-like display of ilSelectInputGUIs</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -350,9 +357,9 @@
                                 <td><p>associative array = question record</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$reviewer_ids </td>
-                                <td></td>
+                                <td><p>ids of the reviewers belonging to each select input</p></td>
                             </tr>
                                             </table>
                 
@@ -377,13 +384,16 @@
             <article class="method">
                 <h3 class="public ">getPostVars()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getPostVars() </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">getPostVars() : array</pre>
+                <p><em>Get the $_POST keys of this object´s input</em></p>
                 
 
                 
                 
-                				
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>$this->postvars        (reviewer id => $<em>POST key in the shape of "id</em>[question id]_[reviewer id])</p>
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -403,13 +413,16 @@
             <article class="method">
                 <h3 class="public ">getQuestionId()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getQuestionId() </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">getQuestionId() : integer</pre>
+                <p><em>Get the question id belonging to this line of the matrix</em></p>
                 
 
                 
                 
-                				
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>$this->question_id    question id</p>
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -472,7 +485,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 20th, 2014 at 15:51.
+                    on January 12th, 2015 at 12:00.
                 </section>
             </section>
         </section>

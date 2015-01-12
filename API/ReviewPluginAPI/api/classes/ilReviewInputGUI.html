@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">133</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">98</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,19 +136,17 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-775689299"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1309929500"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-775689299" class="accordion-body collapse in">
+            <div id="namespace-1309929500" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
                                                                                                     <li class="class"><a href="../classes/ilAspectHeadGUI.html">ilAspectHeadGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilAspectListGUI.html">ilAspectListGUI</a></li>
                                                     <li class="class"><a href="../classes/ilAspectSelectInputGUI.html">ilAspectSelectInputGUI</a></li>
                                                     <li class="class"><a href="../classes/ilCheckMatrixRowGUI.html">ilCheckMatrixRowGUI</a></li>
-                                                    <li class="class"><a href="../classes/ilExampleConfigGUI.html">ilExampleConfigGUI</a></li>
                                                     <li class="class"><a href="../classes/ilObjReview.html">ilObjReview</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewAccess.html">ilObjReviewAccess</a></li>
                                                     <li class="class"><a href="../classes/ilObjReviewGUI.html">ilObjReviewGUI</a></li>
@@ -178,7 +176,7 @@
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
                     <h1><small>\</small>ilReviewInputGUI</h1>
-                    <p><em></em></p>
+                    <p><em>Form to input review data</em></p>
                     
                     
                                         
@@ -227,8 +225,13 @@
                                                                     <a href="../classes/ilReviewInputGUI.html#method_populateEvaluationFormPart" class="">populateEvaluationFormPart()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/ilReviewInputGUI.html#property_a_parent_obj" class="">$a_parent_obj</a><br />
-                                                                    <a href="../classes/ilReviewInputGUI.html#property_a_parent_cmd" class="">$a_parent_cmd</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_review" class="">$review</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_taxonomy" class="">$taxonomy</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_konwledge_dimension" class="">$konwledge_dimension</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_expertise" class="">$expertise</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_rating" class="">$rating</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_evaluation" class="">$evaluation</a><br />
+                                                                    <a href="../classes/ilReviewInputGUI.html#property_quest_tax" class="">$quest_tax</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -260,6 +263,20 @@
                     <table class="table table-condensed">
                                             <tr>
                             <th>
+                                var
+                            </th>
+                            <td>
+                                                                    <p>associative arrays of displayed reviews (column => value)</p>
+                                                                    <p>taxonomy options to choose from</p>
+                                                                    <p>knowlege_dimension options to choose from</p>
+                                                                    <p>expertise options to choose from</p>
+                                                                    <p>rating options to choose from</p>
+                                                                    <p>evaluation options to choose from</p>
+                                                                    <p>the question´s taxonomy and knowledge dimension</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
                                 author
                             </th>
                             <td>
@@ -282,10 +299,10 @@
 
                                                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_a_parent_obj" name="property_a_parent_obj" class="anchor"></a>
+            <a id="property_review" name="property_review" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$a_parent_obj</h3>
-                <pre class="signature">$a_parent_obj : </pre>
+                <h3 class="private ">$review</h3>
+                <pre class="signature">$review : </pre>
                 <p><em></em></p>
                 
 
@@ -306,10 +323,130 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_a_parent_cmd" name="property_a_parent_cmd" class="anchor"></a>
+            <a id="property_taxonomy" name="property_taxonomy" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$a_parent_cmd</h3>
-                <pre class="signature">$a_parent_cmd : </pre>
+                <h3 class="private ">$taxonomy</h3>
+                <pre class="signature">$taxonomy : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_konwledge_dimension" name="property_konwledge_dimension" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$konwledge_dimension</h3>
+                <pre class="signature">$konwledge_dimension : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_expertise" name="property_expertise" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$expertise</h3>
+                <pre class="signature">$expertise : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_rating" name="property_rating" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$rating</h3>
+                <pre class="signature">$rating : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_evaluation" name="property_evaluation" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$evaluation</h3>
+                <pre class="signature">$evaluation : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_quest_tax" name="property_quest_tax" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$quest_tax</h3>
+                <pre class="signature">$quest_tax : </pre>
                 <p><em></em></p>
                 
 
@@ -341,56 +478,56 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(  <span class="argument">$a_parent_obj</span>,   <span class="argument">$a_parent_cmd</span>,   <span class="argument">$review</span>,   <span class="argument">$quest_tax</span>,   <span class="argument">$taxonomy</span>,   <span class="argument">$knowledge_dimension</span>,   <span class="argument">$expertise</span>,   <span class="argument">$rating</span>,   <span class="argument">$evaluation</span>) </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(object  <span class="argument">$a_parent_obj</span>, string  <span class="argument">$a_parent_cmd</span>, array  <span class="argument">$review</span>, array  <span class="argument">$quest_tax</span>, array  <span class="argument">$taxonomy</span>, array  <span class="argument">$knowledge_dimension</span>, array  <span class="argument">$expertise</span>, array  <span class="argument">$rating</span>, array  <span class="argument">$evaluation</span>) </pre>
+                <p><em>constructor, sets up the table</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>object</td>
                                 <td>$a_parent_obj </td>
-                                <td></td>
+                                <td><p>GUI object that contains this object</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$a_parent_cmd </td>
-                                <td></td>
+                                <td><p>Command that causes construction of this object</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$review </td>
-                                <td></td>
+                                <td><p>associative arrays of displayed reviews (column => value)</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$quest_tax </td>
-                                <td></td>
+                                <td><p>the question´s taxonomy and knowledge dimension</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$taxonomy </td>
-                                <td></td>
+                                <td><p>taxonomy options to choose from</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$knowledge_dimension </td>
-                                <td></td>
+                                <td><p>knowlege_dimension options to choose from</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$expertise </td>
-                                <td></td>
+                                <td><p>expertise options to choose from</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$rating </td>
-                                <td></td>
+                                <td><p>rating options to choose from</p></td>
                             </tr>
                                                     <tr>
-                                <td></td>
+                                <td>array</td>
                                 <td>$evaluation </td>
-                                <td></td>
+                                <td><p>evaluation options to choose from</p></td>
                             </tr>
                                             </table>
                 
@@ -471,7 +608,7 @@
                 <h3 class="private ">populateReviewerData()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">populateReviewerData() </pre>
-                <p><em></em></p>
+                <p><em>create the output for the form part which shows the reviewer</em></p>
                 
 
                 
@@ -497,7 +634,7 @@
                 <h3 class="private ">populateReviewFormPart()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">populateReviewFormPart() </pre>
-                <p><em></em></p>
+                <p><em>create the output for the form part which allows to review certain aspects of the question</em></p>
                 
 
                 
@@ -523,7 +660,7 @@
                 <h3 class="private ">populateTaxonomyFormPart()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">populateTaxonomyFormPart() </pre>
-                <p><em></em></p>
+                <p><em>create the output for the form part which allows to input the opinion on taxonomy and knowledge dimension</em></p>
                 
 
                 
@@ -549,7 +686,7 @@
                 <h3 class="private ">populateEvaluationFormPart()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">populateEvaluationFormPart() </pre>
-                <p><em></em></p>
+                <p><em>create the output for the form part which allows to accept, reject or request editing of a question</em></p>
                 
 
                 
@@ -617,7 +754,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 20th, 2014 at 15:51.
+                    on January 12th, 2015 at 12:00.
                 </section>
             </section>
         </section>
