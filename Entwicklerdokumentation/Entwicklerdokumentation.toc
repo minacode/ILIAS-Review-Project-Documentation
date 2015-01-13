@@ -28,13 +28,11 @@
 \contentsline {section}{\numberline {7.5}Transaktionsbehandlung}{30}{section.7.5}
 \contentsline {section}{\numberline {7.6}Sessionbehandlung}{31}{section.7.6}
 \contentsline {section}{\numberline {7.7}Sicherheit}{31}{section.7.7}
-\contentsline {section}{\numberline {7.8}Kommunikation und Integration mit anderen IT-Systemen}{31}{section.7.8}
-\contentsline {section}{\numberline {7.9}Verteilung}{31}{section.7.9}
-\contentsline {section}{\numberline {7.10}Plausibilisierung und Validierung}{31}{section.7.10}
-\contentsline {section}{\numberline {7.11}Ausnahme-/Fehlerbehandlung}{32}{section.7.11}
-\contentsline {section}{\numberline {7.12}Logging, Protokollierung, Tracing}{32}{section.7.12}
-\contentsline {section}{\numberline {7.13}Konfigurierbarkeit}{32}{section.7.13}
-\contentsline {section}{\numberline {7.14}Internationalisierung}{32}{section.7.14}
-\contentsline {section}{\numberline {7.15}Testbarkeit}{32}{section.7.15}
-\contentsline {section}{\numberline {7.16}Buildmanagement}{32}{section.7.16}
+\contentsline {section}{\numberline {7.8}Plausibilisierung und Validierung}{31}{section.7.8}
+\contentsline {section}{\numberline {7.9}Ausnahme-/Fehlerbehandlung}{31}{section.7.9}
+\contentsline {section}{\numberline {7.10}Logging, Protokollierung, Tracing}{31}{section.7.10}
+\contentsline {section}{\numberline {7.11}Konfigurierbarkeit}{31}{section.7.11}
+\contentsline {section}{\numberline {7.12}Internationalisierung}{32}{section.7.12}
+\contentsline {section}{\numberline {7.13}Testbarkeit}{32}{section.7.13}
+\contentsline {section}{\numberline {7.14}Buildmanagement}{32}{section.7.14}
 \contentsline {chapter}{\numberline {8}Glossar}{33}{chapter.8}
