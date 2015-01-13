@@ -31,7 +31,7 @@ Diese Dokumentation beschreibt nur die Funktionalitäten, die das Team selbst be
 Zum Betreiben des Plugins bedarf es eines Webservers, auf dem ILIAS in der Version 4.4.5, MySQL in der Version 5.0.11 und PHP in der Version 5.5.11 bereits vollständig installiert ist. Es ist möglich, dass das Review-Plugin auch mit abweichenden Versionen einwandfrei zu benutzen ist.
 Zur Installation müssen 2 Pakete heruntergeladen werden: assReviewableMultipleChoice\footnote{\label{foot:2}https://github.com/daelmo/assReviewableMultipleChoice}	und Review
 \footnote{\label{foot:3}https://github.com/daelmo/Review}. 
-	assReviewableMultipleChoice muss auf dem Webserver in das Verzeichnis ilias/Customizing/global/plugins/Modules/TestQuestionPool/Questions/ entpackt werden. Review wird hingegen in /ilias/Customizing/global/plugins/Services/Repository/RepositoryObject/ entpackt.
+	assReviewableMultipleChoice muss auf dem Webserver in das Verzeichnis ilias/Customizing/global/plugins/ Modules/TestQuestionPool/Questions/ entpackt werden. Review wird hingegen in /ilias/Customizing/global/plugins/Services/Repository/RepositoryObject/ entpackt.
 	Beide Pakete sind voneinander abhängig und es bedarf beider Pakete um das Plugin nutzen zu können.
 	
 \section{Der erste Start}
@@ -42,25 +42,33 @@ Der Administrator des installierten ILIAS-Systems muss beide Plugins aktivieren.
 \chapter{Struktur}
 
 \section{Erstellungsseite der Fragen}
-Die Seite trifft man im Fragenpool an, wenn eine neue reviewbare Frage erstellt werden soll. Sie sieht der Seite zum Erstellen einfacher Multiple Choice-Fragen sehr ähnlich. Zusätzlich gibt der Nutzer nur den kognitiven Prozess an, sowie die Wissensdimension, in die er die Frage einordnet. Dafür sind zwei Auswahlfelder im unteren Teil des Formulars vorgesehen.
-
+Die Seite trifft man im Fragenpool an, wenn eine neue reviewbare Frage erstellt werden soll. Sie sieht der Seite zum Erstellen einfacher Multiple Choice-Fragen sehr ähnlich. Zusätzlich gibt der Nutzer nur den kognitiven Prozess an, sowie die Wissensdimension, in die er die Frage einordnet. Dafür sind zwei Auswahlfelder im unteren Teil des Formulars vorgesehen.\\
+\includegraphics[width=0.9\textwidth]{frage_erstellen.png}
+\\
 \section{eigene \"Ubersichtsseite}
 In jedem Reviewpool findet der Nutzer als erstes eine Übersicht in Form von zwei Tabellen an, mit der er einen Überblick über von ihm erstellte Fragen, die zurzeit reviewt werden, sowie seine bereits geschriebenen und noch ausstehenden Reviews erhält. 	
 
 \section{Erstellungsseite der Reviews}
 Beim Erstellen eines Reviews erhält man eine Übersicht über die Frage, die reviewt werden soll, dabei ist der Ersteller der Frage anonym. Allein der Administrator kann diesen einsehen.
 Auf die Frage folgt das Review-Eingabeformular mit einer Reihe von Checkboxen die ausgefüllt werden müssen um die erstellte Frage einzuschätzen. Es wird eine schriftliche Bemerkung verlangt, warum die Frage akzeptiert, abgelehnt wird oder überarbeitet werden muss.
-Anschließend wird die selbst eingeschätzte Expertise angegeben und das Review kann abgesendet werden.
+Anschließend wird die selbst eingeschätzte Expertise angegeben und das Review kann abgesendet werden.\\
+\\
+\includegraphics[width=1.0\textwidth]{reviewformular.png}
 
 \section{Reviewansicht}
-Die Seite sieht der zum Erstellen von Reviews sehr ähnlich. Der einzige Unterschied ist, dass die eingetragenen Werte nicht mehr zu bearbeiten sind. Es ist ebenfalls eine Fragenansicht sichtbar, sowie  eine Reihe an Dropdown-Listen und das Bemerkungsfeld. 
+Die Seite sieht der zum Erstellen von Reviews sehr ähnlich. Der einzige Unterschied ist, dass die eingetragenen Werte nicht mehr zu bearbeiten sind. Es ist ebenfalls eine Fragenansicht sichtbar, sowie  eine Reihe an Dropdown-Listen und das Bemerkungsfeld. \\
+\\
+\includegraphics[width=1.0\textwidth]{reviewausgabe.png}
 
 \section{Reviewer Zuordnungsseite}
-Diese Seite ist dem Administrator bestimmt. Zu sehen ist eine Tabelle, in der horizontal alle Mitglieder dieser Gruppe und vertikal alle zu reviewenden Fragen gelistet sind. Um die Fragen Gruppenmitgliedern zuzuordnen, müssen die Checkboxen entsprechender Zeile und Spalte angeklickt werden. 
+Diese Seite ist dem Administrator bestimmt. Zu sehen ist eine Tabelle, in der horizontal alle Mitglieder dieser Gruppe und vertikal alle zu reviewenden Fragen gelistet sind. Um die Fragen Gruppenmitgliedern zuzuordnen, müssen die Checkboxen entsprechender Zeile und Spalte angeklickt werden. \\
+\\
+\includegraphics[width=1.0\textwidth]{reviewer_zuordnen.png}
 
 \section{Übersicht vollständig gereviewter Fragen}
-Hier werden alle fertig gereviewten Fragen gelistet, damit ein Administrator sie freischalten kann. Die freigegebenen Fragen sind dann für die Verwendung in Tests geeignet.
-
+Hier werden alle fertig gereviewten Fragen gelistet, damit ein Administrator sie freischalten kann. Die freigegebenen Fragen sind dann für die Verwendung in Tests geeignet. \\
+\\
+\includegraphics[width=1.0\textwidth]{frage_fertigstellen.png}
 
 \chapter{Sie sind eingeloggt}
 
@@ -84,7 +92,8 @@ Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Wechseln 
 \section{als Nutzer}
 	
 \subsection{Review erstellen}
-Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Um ein Review erstellen zu können, muss vorher eine reviewbare Frage erstellt worden sein. Wenn Ihnen Fragen zum Reviewen zugeteilt werden, dann erreichen Sie das entsprechende Review-Eingabeformular in der unteren Tabelle namens 'Meine Reviews'. Klicken Sie auf Review erstellen, füllen Sie die Seite aus und speichern Sie es. 		
+Wählen Sie über 'Magazin' Ihren Reviewpool aus und betreten Sie ihn. Um ein Review erstellen zu können, muss vorher eine reviewbare Frage erstellt worden sein. Wenn Ihnen Fragen zum Reviewen zugeteilt werden, dann erreichen Sie das entsprechende Review-Eingabeformular in der unteren Tabelle namens 'Meine Reviews'. Klicken Sie auf Review erstellen, füllen Sie die Seite aus und speichern Sie es. \\		
+\includegraphics[width=1.0\textwidth]{reviewpool_erstellen.png}
 		
 \subsection{Frage erstellen}
 Wählen Sie über 'Magazin' Ihren Fragenpool aus und betreten Sie ihn. Unter der Reiterleiste finden Sie den Button 'Frage erstellen'. Folgen Sie ihm und wählen Sie auf der folgenden Seite beispielsweise 'Multiple Choice (Reviewbar)', für eine Multiple Choice Frage. Klicken Sie auf 'Erstellen' und füllen Sie die folgende Seite aus. Der Prozess sieht dem üblichen Frageerstellungsprozess von ILIAS sehr ähnlich. 
