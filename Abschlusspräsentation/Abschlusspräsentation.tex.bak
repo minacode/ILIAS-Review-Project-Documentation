@@ -33,7 +33,11 @@
 		\begin{frame}
 			\frametitle{Aufgabenstellung}
 			\begin{itemize}
-				\item 
+				\item erstellen einer Reviewbaren Frage
+				\item erstellen von Reviews zu Ilias' Fragen
+				\item Händische Zuordnung von Reviewer zu Frage
+				\item Übersicht über die eigens erstellten Fragen und Reviews
+				
 			\end{itemize}
 		\end{frame}
 
@@ -47,14 +51,28 @@
 		\end{frame}
 	\section{Probleme}
 		\begin{frame}
-			\frametitle{Problembehandlung}
+			\frametitle{Probleme}
     		\begin{itemize}
     			\item Wahl des Repositorys
 		    	\item Erstellen der Reviewbaren Fragen
     			\item Wahl der Reviewerzuordnung
+    			\item erstellen der Tests lieferte Probleme
+    			\item Import/Export
+    			\item Zeitmanagement - Wunschkriterien wurden nicht erfüllt
     		\end{itemize}
 		\end{frame}
+		\begin{frame}
+			Erfüllung der Musskriterien:
+			\begin{itemize}
+				\item Die Review Maske wurde gemäß Prof. Wollersheims Beispiel-Maske erstellt.
+				\item Das angeben der Expertise nach Frau Kombrinks Wunsch ist implementiert.
+				\item Die Wissensdimension und Taxonomie des Autors wird angezeigt und der Reviewer muss seine eigene Einschätzung angeben.
+				
+			\end{itemize}
+		\end{frame}
 
-	\section{Diagramme und Prototyp}
-		
+	\section{Vorstellung des Resultats}
+		\begin{frame}
+		\frametitle{Live-Demo}
+		\end{frame}
 \end{document}
