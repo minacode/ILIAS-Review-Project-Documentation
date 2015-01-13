@@ -4,8 +4,8 @@
 \contentsline {section}{\numberline {1.2}Einrichtung der Software}{3}{section.1.2}
 \contentsline {section}{\numberline {1.3}Der erste Start}{3}{section.1.3}
 \contentsline {chapter}{\numberline {2}Struktur}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Erstellungsseite der Fragen}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}eigene \"Ubersichtsseite}{6}{section.2.2}
+\contentsline {section}{\numberline {2.1}eigene \"Ubersichtsseite}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Erstellungsseite der Fragen}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Erstellungsseite der Reviews}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Reviewansicht}{7}{section.2.4}
 \contentsline {section}{\numberline {2.5}Reviewer Zuordnungsseite}{8}{section.2.5}
@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {3.1.5}Rechte bearbeiten}{10}{subsection.3.1.5}
 \contentsline {section}{\numberline {3.2}als Nutzer}{11}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Review erstellen}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Frage erstellen}{11}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Review einsehen}{11}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.2}Review einsehen}{11}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Frage erstellen}{12}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Frage exportieren}{12}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Frage importieren}{12}{subsection.3.2.5}
