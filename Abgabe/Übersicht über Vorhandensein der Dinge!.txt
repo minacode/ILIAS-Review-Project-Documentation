@@ -1,0 +1,10 @@
+Analyse -> check 
+Anwenderdokumentation -> fehlt
+Aufgabenstellung -> check
+Auswertung -> Erfahrungsberichte fehlen
+Entwurf -> Doku fehlt
+Implem_und_Test -> fehlt KOMPLETT!!!
+Modell -> check
+Pflichtenheft -> check
+Praesentation -> Abschlusspräsi fehlt
+Projektorganisation -> Arbeitszeiten fehlen
