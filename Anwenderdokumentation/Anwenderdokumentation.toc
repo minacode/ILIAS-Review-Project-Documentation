@@ -14,9 +14,9 @@
 \contentsline {section}{\numberline {3.1}als Administrator}{10}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Reviewpool erstellen}{10}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Reviews zuteilen}{10}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Vollst\IeC {\"a}ndige Reviews freigeben}{10}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Eigenschaften des Reviewpools bearbeiten}{10}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Rechte bearbeiten}{10}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.3}Vollst\IeC {\"a}ndige Reviews freigeben}{11}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Eigenschaften des Reviewpools bearbeiten}{11}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Rechte bearbeiten}{11}{subsection.3.1.5}
 \contentsline {section}{\numberline {3.2}als Nutzer}{11}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Review erstellen}{11}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Review einsehen}{11}{subsection.3.2.2}
