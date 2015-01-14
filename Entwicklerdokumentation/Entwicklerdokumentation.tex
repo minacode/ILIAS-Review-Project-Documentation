@@ -45,9 +45,9 @@ Portierbarkeit &&&&\ding{51}\\\hline
 
 \begin{tabular}{|p{3.5cm}|p{2.3cm}|p{3cm}|p{4cm}|}\hline
 Name & Rolle & Beschreibung & Intention \\\hline
-Thordis Kombrink & Kundin & Mitarbeiterin an der Fakultät Informatik, zugehörig zum Lehrstuhl Systems-Engineering & -möchte in ihrer Arbeitsgruppe Ilias nutzen, um Klausuren zu erstellen, mit gereviewten Fragen\\\hline
-Dr. Birgit Demuth & Interessentin & Arbeitet am Lehrstuhl Softwaretechnologie & -Interesse an der Umsetzung, um Ilias unter Umständen an der Fakultät einzusetzen\\\hline
-Prof. Dr. Heinz-Werner Wollersheim & Fachlicher Ansprechpartner & Professor aus Leipzig der sich mit dem Thema (Fragen für Klausuren reviewen) auseinandersetzt & -würde gerne effektiver mit Ilias in seiner Arbeitsgruppe arbeiten, es fehlt aber die Reviewmöglichkeit, die wir erstellen\\\hline
+Thordis Kombrink & Kundin & Mitarbeiterin an der Fakultät Informatik, zugehörig zum Lehrstuhl Systems-Engineering & -möchte in ihrer Arbeitsgruppe ILIAS nutzen, um Klausuren mit gereviewten Fragen zu erstellen\\\hline
+Dr. Birgit Demuth & Interessentin & Arbeitet am Lehrstuhl Softwaretechnologie & -Interesse an der Umsetzung, um ILIAS unter Umständen an der Fakultät einzusetzen\\\hline
+Prof. Dr. Heinz-Werner Wollersheim & Fachlicher Ansprechpartner & Professor aus Leipzig, der sich mit dem Thema (Fragen für Klausuren reviewen) auseinandersetzt & -würde gerne effektiver mit ILIAS in seiner Arbeitsgruppe arbeiten, dazu fehlt die Reviewmöglichkeit, die wir erstellen\\\hline
 \end{tabular}
 
 \chapter{Randbedingungen}
@@ -55,7 +55,7 @@ Prof. Dr. Heinz-Werner Wollersheim & Fachlicher Ansprechpartner & Professor aus 
 \section{Konventionen} 
 
 Das Plugin muss die ILIAS-Version 4.4.5, die MySQL Version 5.0.11 und die PHP-Version 5.5.11 unterstützen.
-Es gelten die im 'Ilias-Developement-Guide'\footnote{\url{http://www.ilias.de/docu/goto.php?target=lm_42&client_id=docu} (29.10.14)} und in den 'Ilias Usability and Accessibility Guidelines'\footnote{\url{http://www.ilias.de/docu/goto_docu_lm_459.html} (29.10.14)} festgesetzten Konventionen.
+Es gelten die im 'ILIAS-Developement-Guide'\footnote{\url{http://www.ilias.de/docu/goto.php?target=lm_42&client_id=docu} (29.10.14)} und in den 'ILIAS Usability and Accessibility Guidelines'\footnote{\url{http://www.ilias.de/docu/goto_docu_lm_459.html} (29.10.14)} festgesetzten Konventionen.
 
 \chapter{Kontextabgrenzung}
 
@@ -64,8 +64,15 @@ Es gelten die im 'Ilias-Developement-Guide'\footnote{\url{http://www.ilias.de/do
 \includegraphics[width=1.0\textwidth]{Component_Diagram__Topleveldiagramm.png}
 \label{Toplevel-Architektur}
 
-Um die Review-Funktionalitäten umzusetzen, mussten zwei Plugins für Ilias entwickelt werden. 
-Zum einen 
+Um die Review-Funktionalitäten umzusetzen, mussten zwei Plugins für ILIAS entwickelt werden. 
+Zum einen ein Repository-Plugin, das alle Verwaltungsaufgaben für Reviews übernimmt und eine TestQuestionPlugin, das eine reviewbare Frage implementiert.\\
+
+Das Repository-Plugin muss für seine Verwaltungsaufgaben Oberflächen zum Eingeben und Einsehen von Reviews, sowie eine Oberfläche zur Übersicht bereitstellen.\\
+
+Eine reviewbare Frage braucht, weil sie zusätzliche Daten beinhaltet, eine neue Eingabeoberfläche. \\
+
+Die beiden Plugins werden an von ILIAS bereitgestellten Schnittstellen angesetzt. 
+Zusätzlich benutzen beide die ILIAS-Datenbank um ihre Daten zu speichern.\\
 
 \section{Externe Schnittstellen}
 
@@ -104,7 +111,7 @@ Nr. & Anwendungsfall & Nr. & Anfrage & Antwort\\\hline
 
 Für die Reviews sind zwei Plugins notwendig. 
 Zum einen wurde ein Plugin entwickelt, das die Verwaltung von Reviews ermöglicht, zum anderen wurde ein Plugin für Reviewbare Multiple Choice Fragen erstellt. 
-Es soll als Beispiel dienen, wie in Ilias vorhandene Fragentypen erweitern werden können, damit sie reviewbar werden.
+Es soll als Beispiel dienen, wie in ILIAS vorhandene Fragentypen erweitern werden können, damit sie reviewbar werden.
 Für die Plugins wurden verschiedene Plugin-Slots verwendet. 
 Das Fragen-Plugin ist ein TestQuestionPlugin und das Review-Plugin ist ein RepositoryPlugin.\\ 
 
@@ -112,14 +119,14 @@ Das Fragen-Plugin ist ein TestQuestionPlugin und das Review-Plugin ist ein Repos
 
 Das Plugin für reviewbare Multiple Choice Fragen stellt eine Erweiterung der Multiple Choice Frage dar. 
 Diese wird dabei um die Attribute der Taxonomie und Wissensdimension nach Prof. Wollersheim erweitert. 
-Die Taxonomiestufe einer reviewbaren Frage beeinflusst die Nutzung von den in Ilias bereits vorhandenen Taxonomien nicht.
-Das Plugin soll außerdem als Vorlage dafür dienen, wie man Plugins für andere Fragetypen entwickelt um diese ebenfalls reviewbar zu machen. \\
+Die Taxonomiestufe einer reviewbaren Frage beeinflusst die Nutzung von den in ILIAS bereits vorhandenen Taxonomien nicht.
+Das Plugin soll außerdem als Vorlage dafür dienen, wie man Plugins für andere Fragetypen entwickelt, um diese ebenfalls reviewbar zu machen. \\
 
 \subsection{Ordnerstruktur}
 
-Die Ordnerstruktur richtet sich nach den Ilias-Konventionen\footnote{\url{http://www.ilias.de/docu/ilias.php?ref_id=42&obj_id=27029&cmd=layout&cmdClass=illmpresentationgui&cmdNode=ih&baseClass=ilLMPresentationGUI&obj_id=64260}} für das 'Test Question Plugin'. 
+Die Ordnerstruktur richtet sich nach den ILIAS-Konventionen\footnote{\url{http://www.ilias.de/docu/ilias.php?ref_id=42&obj_id=27029&cmd=layout&cmdClass=illmpresentationgui&cmdNode=ih&baseClass=ilLMPresentationGUI&obj_id=64260}} für das 'Test Question Plugin'. 
 Die Datei plugin.php definitert die ID des Plugins (revmc) und die kompatiblen ILIAS-Versionen (4.4.xx), außerdem hält sie die aktuelle Version des Review-Plugins fest.\\
-Im Ordner 'classes' befinden sich die '...Plugin'- und '...Feedback'-Klassen, welche von Ilias' Multiple-Choice-Frage übernommen wurden. 
+Im Ordner 'classes' befinden sich die '...Plugin'- und '...Feedback'-Klassen, welche von der ILIAS-eigenen Multiple-Choice-Frage übernommen wurden. 
 In den Unterordnern 'import' und 'export' befinden sich die PHP-Dateien, welche für die Auslagerung und Wiedereinbindung von Fragen zuständig sind. 
 Die Klassen 'assReviewableMultipleChoice' und 'assReviewableMultipleChoiceGUI' werden in der Klassenübersicht genauer betrachtet.\\
 Im Ordner 'lang' befinden sich die entsprechenden Language Dateien für Deutsch und Englisch, in denen den Variablen die Ausdrücke zugeordnet werden.\\
@@ -134,7 +141,7 @@ Alle Klassen werden von den Klassen des bereits vorhandenen Fragentyps per Verer
 
 Attribute:\\
 Die Klasse besitzt zwei zusätzliche Attribute für Taxonomie (taxonomy) und Wissensdimension (knowledge\textunderscore dimension).
-Für diese besitzt sie außerdem get- und set-Funktionen, die nach den in Ilias üblichen Regeln benannt sind.\\
+Für diese besitzt sie außerdem get- und set-Funktionen, die nach den in ILIAS üblichen Regeln benannt sind.\\
 
 getQuestionType():\\
 Diese Funktion muss implementiert werden und gibt den Fragentyp als String zurück.\\
@@ -477,7 +484,7 @@ Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formati
 
 \section{Persistenz}
 
-Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in Ilias implementiert ist. 
+Um Persistenz zu ermöglichen, nutzen wir die mySQL-Datenbankverwaltung, wie sie in ILIAS implementiert ist. 
 
 Alle Daten, die auf den einzelnen Seiten des Plugins dargestellt werden, laden mit mithilfe des Datenbank-Controllers von ILIAS, ilDB, als PHP-Arrays aus der Datenbank. 
 Nutzereingaben werden über diese Schnittstelle ebenfalls direkt in die Datenbank geschrieben.
@@ -526,7 +533,7 @@ Die Benutzerauthentifizierung ist ebenfalls von ILIAS gedeckt, lediglich die unt
 
 \section{Ausnahme-/Fehlerbehandlung}
 
-Ilias übernimmt die Fehlerbehandlung.\\
+ILIAS übernimmt die Fehlerbehandlung.\\
 Wenn ein Plugin auf das andere zugreift, prüfen wir, ob das andere Plugin aktiviert ist, um Zugriffsfehler zu vermeiden.
 
 \section{Logging, Protokollierung, Tracing}
@@ -540,7 +547,7 @@ Weder das Review-Plugin noch das Plugin für reviewbare Multiple Choice-Fragen s
 \section{Internationalisierung}
 
 Das Plugin enthält ein englisches und ein deutsches Sprachpaket. 
-Weitere Sprachen lassen sich über die Ilias-Konforme Einbettung\footnote{\url{http://www.ilias.de/docu/ilias.php?ref_id=37&obj_id=8478&from_page=133&cmd=layout&cmdClass=illmpresentationgui&cmdNode=ih&baseClass=ilLMPresentationGUI&obj_id=128}} 
+Weitere Sprachen lassen sich über die ILIAS-Konforme Einbettung\footnote{\url{http://www.ilias.de/docu/ilias.php?ref_id=37&obj_id=8478&from_page=133&cmd=layout&cmdClass=illmpresentationgui&cmdNode=ih&baseClass=ilLMPresentationGUI&obj_id=128}} 
  hinzufügen, wozu die entsprechenden Sprachdateien in Review/lang bzw. 
 ReviewableMultipleChoice/lang abgelegt werden müssen.
 
@@ -554,7 +561,7 @@ Bestandteil jedes Testfalls ist die Konstruktion eines Datenbankszenarios, das d
 
 \section{Buildmanagement}
 
-Für das Plugin wurden PHP-Dateien geschrieben, die beim Starten von Ilias in dessen Hauptdateien eingebunden werden.
+Für das Plugin wurden PHP-Dateien geschrieben, die beim Starten von ILIAS in dessen Hauptdateien eingebunden werden.
 Es wurden 2 Repositorys genutzt, das assReviewableMultipleChoice-Repository\footnote{\url{https://github.com/daelmo/assReviewableMultipleChoice}} in welchem die Quellcode-Dateien für das Fragenplugin liegen und das Review-Repository\footnote{\url{https://github.com/daelmo/Review}}, welches die Dateien für das Review-Plugin enthält.
 
 \chapter{Glossar}
