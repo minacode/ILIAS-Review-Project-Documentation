@@ -90,7 +90,7 @@ Nr. & Anwendungsfall & Nr. & Anfrage & Antwort\\\hline
 
 \subsection{Fragepool}
 
-\includegraphics[width=1.0\textwidth]{Use_Case_Diagram__Fragepool.png}
+\includegraphics[width=0.8\textwidth]{Use_Case_Diagram__Fragepool.png}
 \label{Fragepool bearbeiten}
 
 \begin{tabular}{|p{0.5cm}|p{3cm}|p{0.5cm}|p{4cm}|p{4.5cm}|}\hline
@@ -341,7 +341,7 @@ rep\textunderscore robj\textunderscore xrev\textunderscore expert & beinhaltet a
 
 Das Entwurfsklassendiagramm besteht aus zwei Teilen, dem 'Reviewable Question'-Teil (blau) und dem 'Review'-Teil (hellbraun). 
 Daneben ist noch eine Vielzahl an ILIAS-Klassen (grün) eingetragen, die alle Methoden enthalten, die von unseren Plugins aufgerufen werden. 
-Lediglich auf grundlegende GUI-Komponenten wie beispielsweise Texteingabefelder wurde aus Gründen der Übersichtlichkeit verzichtet. 
+Lediglich auf grundlegende GUI-Komponenten wie beispielsweise Texteingabefelder wurde aus Gründen der Übersichtlichkeit verzichtet. Zur näheren Betrachtung liegt es als PNG-Datei im selben Verzeichnis wie diese Dokumentation vor.
 
 Die Plugins können getrennt voneinander betrachtet werden, da die Interaktionen zwischen ihnen allein aus statischen Methodenaufrufen und Datenbankabfragen bestehen, die in einem Entwurfsklassendiagramm nicht dargestellt werden.\\
 
@@ -456,7 +456,7 @@ Die globalen ILIAS-Objekte werden auch bei unseren eigenen GUI-Komponenten mithi
 
 Nachdem der Autor eine Frage erstellt hat, kann er ein Review anfordern. Dadurch werden Reviewer bestimmt, welche vom Review-Plugin informiert werden, dass ein Review abzugeben ist.\\
 
-\includegraphics[width=1.0\textwidth]{Sequence_Diagram__Review_anfordern__Review_anfordern.png}
+\includegraphics[width=0.7\textwidth]{Sequence_Diagram__Review_anfordern__Review_anfordern.png}
 \label{Review anfordern}
 
 \newpage
@@ -465,7 +465,7 @@ Nachdem der Autor eine Frage erstellt hat, kann er ein Review anfordern. Dadurch
 
 Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formatiert und abgespeichert. Im Anschluss wird der Autor informiert, dass ein neues Review vorhanden ist.\\
 
-\includegraphics[width=0.9\textwidth]{Sequence_Diagram__Review_erstellen__Review_erstellen.png}
+\includegraphics[width=0.65\textwidth]{Sequence_Diagram__Review_erstellen__Review_erstellen.png}
 \label{Review beenden}
 
 \section{Persistenz}
@@ -484,10 +484,10 @@ ilDB in der ILIAS-Dokumentation: \url{http://ildoc.hrz.uni-giessen.de/ildoc/Rele
 \includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__InputForm.png}
 \label{Grafische Benutzeroberfläche}\newpage
 
-\includegraphics[width=0.99\textwidth]{User_Interface_Modeling_Diagram__Plugin-Objekt.png}
+\includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__Plugin-Objekt.png}
 \label{Grafische Benutzeroberfläche Review}
 
-\includegraphics[width=0.7\textwidth]{User_Interface_Modeling_Diagram__Reviewerzuordnung.png}
+\includegraphics[width=0.88\textwidth]{User_Interface_Modeling_Diagram__Reviewerzuordnung.png}
 \label{Grafische Benutzeroberfläche Autor}\section{Ergonomie}
 
 \flushleft{Peter}
@@ -520,11 +520,11 @@ Die Benutzerauthentifizierung ist ebenfalls von ILIAS gedeckt, lediglich die unt
 \section{Ausnahme-/Fehlerbehandlung}
 
 Ilias übernimmt die Fehlerbehandlung.\\
-Wenn ein Plugin auf das andere zugreift, prüfen wir, ob das Plugin aktiviert ist, um Zugriffsfehler zu vermeiden.
+Wenn ein Plugin auf das andere zugreift, prüfen wir, ob das andere Plugin aktiviert ist, um Zugriffsfehler zu vermeiden.
 
 \section{Logging, Protokollierung, Tracing}
 
-Wir haben keine Maßnahmen getroffen, Ilias bietet aber einen Developer-Mode, der dazu Informationen bereitstellt.
+Wir haben diesbezüglich keine Maßnahmen getroffen, ILIAS bietet aber einen Developer-Mode, der Informationen über die aktuell aktiven Controller und eingebundenen Dateien bereitstellt bereitstellt.
 
 \section{Konfigurierbarkeit}
 
