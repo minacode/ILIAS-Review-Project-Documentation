@@ -1,5 +1,5 @@
 Analyse -> check 
-Anwenderdokumentation -> fehlt
+Anwenderdokumentation -> check
 Aufgabenstellung -> check
 Auswertung -> Erfahrungsberichte fehlen
 Entwurf -> Doku fehlt
