@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {2}Randbedingungen}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Konventionen}{6}{section.2.1}
 \contentsline {chapter}{\numberline {3}Kontextabgrenzung}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Technischer- oder Verteilungskontext}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}Fachlicher Kontext}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Externe Schnittstellen}{7}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Review}{8}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Fragepool}{10}{subsection.3.2.2}
@@ -38,10 +38,10 @@
 \contentsline {chapter}{\numberline {7}Konzepte}{26}{chapter.7}
 \contentsline {section}{\numberline {7.1}Fachliche Strukturen und Modelle}{26}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Analyseklassendiagramm}{26}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Review anfordern}{27}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Review abschlie\IeC {\ss }en}{28}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.2}Sequenzdiagramm - Review anfordern}{27}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Sequenzdiagramm - Review abschlie\IeC {\ss }en}{28}{subsection.7.1.3}
 \contentsline {section}{\numberline {7.2}Persistenz}{28}{section.7.2}
-\contentsline {section}{\numberline {7.3}Benutzungsoberfl\IeC {\"a}che}{29}{section.7.3}
+\contentsline {section}{\numberline {7.3}Benutzeroberfl\IeC {\"a}che}{29}{section.7.3}
 \contentsline {section}{\numberline {7.4}Ergonomie}{30}{section.7.4}
 \contentsline {section}{\numberline {7.5}Transaktionsbehandlung}{30}{section.7.5}
 \contentsline {section}{\numberline {7.6}Sessionbehandlung}{31}{section.7.6}

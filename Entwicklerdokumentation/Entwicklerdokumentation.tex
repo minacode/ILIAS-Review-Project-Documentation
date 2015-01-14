@@ -25,7 +25,7 @@
 
 \section{Aufgabenstellung}
 
-Aufgabe ist es ein Plugin für das freie, internetbasierte Lernsystem ILIAS\footnote{\url{http://www.ilias.de/docu/ilias.php?baseClass=ilrepositorygui&reloadpublic=1&cmd=frameset&ref_id=1}} zu programmieren, um es um eine Review-Möglichkeit der erstellten Fragen zu erweitern. 
+Aufgabe ist es ein Plugin für das freie, internetbasierte Lernsystem ILIAS\footnote{\url{http://www.ilias.de/docu/ilias.php?baseClass=ilrepositorygui&reloadpublic=1&cmd=frameset&ref_id=1}} zu programmieren, um es um eine Review-Möglichkeit von erstellten Fragen zu erweitern. 
 
 \section{Qualitätsziele}
 
@@ -59,10 +59,13 @@ Es gelten die im 'Ilias-Developement-Guide'\footnote{\url{http://www.ilias.de/do
 
 \chapter{Kontextabgrenzung}
 
+\section{Fachlicher Kontext}
+
 \includegraphics[width=1.0\textwidth]{Component_Diagram__Topleveldiagramm.png}
 \label{Toplevel-Architektur}
 
-\section{Technischer- oder Verteilungskontext}
+Um die Review-Funktionalitäten umzusetzen, mussten zwei Plugins für Ilias entwickelt werden. 
+Zum einen 
 
 \section{Externe Schnittstellen}
 
@@ -217,6 +220,7 @@ Fragen, die in beiden vorkommen, werden auf ihren Timestamp überprüft; hat die
 Dementsprechend wird ihr Zustand auf 0 gesetzt und von den dieser Frage zugeteilten Reviewern werden neue Reviews angefordert (Aufrufe von \$ilDB->update), außerdem werden die Reviewer darüber benachrigtigt (Aufruf von notifyReviewersAboutChange). 
 Ist eine Frage nur in einem Fragepool enthalten, dann wurde sie neu erstellt und wird der Datenbank hinzugefügt (Aufruf von \$ilDB->insert) und die Administratoren werden drüber informiert (Aufruf von notifyAdminsAboutNewQuestion). 
 Ist eine Frage nur in der Datenbank des Review-Objekts vorhanden, dann wurde sie im Fragepool gelöscht und wird nun automatisch mitsamt der zur ihr gehörenden Reviews aus der Datenbank des Review-Objekts entfernt (Aufruf von \$iDB->manipulateF) und die vormaligen Reviewer werden informiert (notifyReviewersAboutDeletion).\\
+
 Der Großteil der weiteren Methoden sind Datenbankabfragen, die Reviews, Fragen oder andere Datensätze abrufen und als assoziative Arrays zurückgeben. 
 Diese Methoden sind deshalb notwendig, da das Plugin mehrere Anwendungsfälle abdeckt, für welche Daten unter unterschiedlichen Kriterien ausgewählt und formatiert werden müssen. \\
 
@@ -357,48 +361,53 @@ Die Klassen 'ilAssReviewableMultipleChoiceFeedback' und 'ilassReviewableMultiple
 
 \section{Review}
 
-Die Klasse ilReviewPlugin erbt von ilRepositoryPlugin und implementiert die Methode getPluginName, die den Namen des Review-Plugins liefert.\\
+Die Klasse ilReviewPlugin erbt von ilRepositoryPlugin und implementiert die Methode 'getPluginName()', die den Namen des Review-Plugins liefert.\\
 
 Die Anwendungsklasse ilObjReview erbt von ilObjectPlugin und erweitert sie um das Attribut group\textunderscore id und eine Getter- und Setter-Funktion dafür. 
-Sie implementiert die Methode iniType und überschreibt die Methoden zur Verwaltung des Datenbankeintrags eines Review-Plugin-Objekts, die mit 'do' beginnen und von ILIAS aufgerufen werden. 
+Sie implementiert die Methode 'iniType()' und überschreibt die Methoden zur Verwaltung des Datenbankeintrags eines Review-Plugin-Objekts, die mit 'do' beginnen und von ILIAS aufgerufen werden.
+
 Weiterhin implementiert sie Methoden, die mit 'load' beginnen und Datensätze aus der ILIAS-Datenbank laden. 
-Die Methoden saveReview, allocateReviews und finishQuestions dienen dazu, Nutzereingaben in der Datenbank zu speichern. 
-Über die statischen Methoden taxonomy, knowledgeDimension, expertise, rating und evaluation können andere Objekte die von uns definierten Enumerationen aus der Datenbank laden, ohne eine Instanz von ilObjReview zur Verfügung haben zu müssen. 
+Die Methoden 'saveReview()', 'allocateReviews()' und 'finishQuestions()' dienen dazu, Nutzereingaben in der Datenbank zu speichern. 
+
+Über die statischen Methoden 'taxonomy()', 'knowledgeDimension()', 'expertise()', 'rating()' und 'evaluation()' können andere Objekte die von uns definierten Enumerationen aus der Datenbank laden, ohne eine Instanz von ilObjReview zur Verfügung haben zu müssen. 
+
 Die 'notify'-Methoden dieser Klasse dienen zur Vorbereitung von ILIAS-Systemnachrichten, die anschließend durch einen privaten Aufruf von performNotification abgeschickt werden.
-Der GUI-Controller ilObjReviewGUI erbt von ilObjectPluginGUI und erweitert sie um einige Standard-Methoden, die ILIAS auf GUI-Controllern aufruft, dies sind getType, performCommand, getAfterCreationCmd, getStandardCmd und setTabs. 
-Mithilfe der von ihr implementierten Methoden inputReview, allocateReviews, finishQuestions und editProperties werden Eingabeformulare erzeugt, deren Input dann durch die Methoden saveReview, saveAllocateReviews, saveFinishQuestions bzw. updateProperties in der Datenbank von ILIAS gespeichert wird. 
-Die mit 'init' beginnenden Methoden dieser Klasse erstellen die eigentlichen GUI-Komponenten und dieMethode showReviews erzeugt ein Ausgabeformular.\\
+
+Der GUI-Controller ilObjReviewGUI erbt von ilObjectPluginGUI und erweitert sie um einige Standard-Methoden, die ILIAS auf GUI-Controllern aufruft, dies sind 'getType()', 'performCommand()', 'getAfterCreationCmd()', 'getStandardCmd()' und 'setTabs()'. 
+Mithilfe der von ihr implementierten Methoden 'inputReview()', 'allocateReviews()', 'finishQuestions()' und 'editProperties()' werden Eingabeformulare erzeugt, deren Input dann durch die Methoden 'saveReview()', 'saveAllocateReviews()', 'saveFinishQuestions()' bzw. 'updateProperties()' in der Datenbank von ILIAS gespeichert wird. 
+
+Die mit 'init' beginnenden Methoden dieser Klasse erstellen die eigentlichen GUI-Komponenten und die Methode 'showReviews()' erzeugt ein Ausgabeformular.\\
 
 ilReviewListGUI und ilObjReviewAccess erben von ilObjectPluginListGUI bzw. ilObjectPluginAccess. 
 Sie erweitern diese Klassen um einige pluginspezifische Methoden, die im ILIAS Development Guide unter Repository Object Plugins \footnote{\url{http://www.ilias.de/docu/goto_docu_pg_29962_42.html}} zu finden sind. \\
 
-Die Klasse ilObjReviewAccess implementiert zusätzlich noch die statische Methode checkAccessToObject, die vom GUI-Controller aufgerufen wird, um zu prüfen, ob ein Nutzer berechtigt ist, sich ein bestimmtes Formular anzeigen zu lassen.\\
+Die Klasse ilObjReviewAccess implementiert zusätzlich noch die statische Methode 'checkAccessToObject()', die vom GUI-Controller aufgerufen wird, um zu prüfen, ob ein Nutzer berechtigt ist, sich ein bestimmtes Formular anzeigen zu lassen.\\
 
-Die GUI-Klasse ilQuestionOverviewGUI dient lediglich dazu, eine von ILIAS gelieferte Fragenvorschau mit zusätzlichen Daten anzureichern, was im Konstruktor passiert. 
-Über die Methode getHtml kann diese dann als Komponente in ein Formular eingebunden werden.\\
+Die GUI-Klasse ilQuestionOverviewGUI dient lediglich dazu, eine von ILIAS gelieferte Fragenvorschau mit zusätzlichen Daten anzureichern, was im Konstruktor passiert.
+Über die Methode 'getHtml()' kann diese dann als Komponente in ein Formular eingebunden werden.\\
 
 Die GUI-Klassen ilQuestionFinishTableGUI, ilReviewTableGUI, ilQuestionTableGUI und ilReviewOutputGUI erzeugen jeweils Datentabellen. 
-Dazu erben sie von ilTable2GUI, der Grundkomponente von ILIAS-Tabellen und überschreiben zwei ihrer Methoden: im Konstruktor bestimmen sie das Format der Tabelle, während sie in fillRow festlegen, wie einzelne Zeilen mit Daten gefüllt werden. 
+Dazu erben sie von ilTable2GUI, der Grundkomponente von ILIAS-Tabellen und überschreiben zwei ihrer Methoden: im Konstruktor bestimmen sie das Format der Tabelle, während sie in 'fillRow()' festlegen, wie einzelne Zeilen mit Daten gefüllt werden. 
 Letztere ist protected, weil sie nur durch ilTable2GUI aufgerufen werden soll.
  
-Da die Datensätze von ilReviewOutputGUI komplexe Review-Eingabeformulare sind, hat sie zusätzlich eine Methode setUpData, in der die Formulare erzeugt werden.\\
+Da die Datensätze von ilReviewOutputGUI komplexe Review-Eingabeformulare sind, hat sie zusätzlich eine Methode 'setUpData()', in der die Formulare erzeugt werden.\\
 
 Die GUI-Komponenten ilAspectSelectInputGUI, ilAspectHeadGUI und ilCheckMatrixRowGUI dienen dazu, mehrere Aufklappmenüs (ilSelectInputGUI), Textfelder (ilNonEditableValueGUI) bzw. Checkboxen (ilCheckboxInputGUI) nebeneinander in einem Formular darzustellen. 
 Dazu erweitern sie die ILIAS-Klasse ilCustomInputGUI und nutzen die ILIAS-Template-Engine um mithilfe vorgefertigter Template-Dateien GUI-Objekte zu erstellen. 
 Der Kontext, in dem diese GUI-Klassen eingesetzt werden, ist dabei unterschiedlich, weshalb sich ihre Methoden stark unterscheiden.
 
-ilAspectHeadGUI benötigt beim Aufruf nur die Beschriftungen der Textfelder in Form eines Arrays und implementiert die Methode setDisabled, um als Komponente in der wie im Composite Pattern organisierten GUI nutzbar zu sein.
+ilAspectHeadGUI benötigt beim Aufruf nur die Beschriftungen der Textfelder in Form eines Arrays und implementiert die Methode 'setDisabled()', um als Komponente in der wie im Composite Pattern organisierten GUI nutzbar zu sein.
  
-ilAspectSelectInputGUI besitzt die privaten Attribute disabled, ein Bool, in dem gespeichert ist, ob der Nutzer mit dem Objekt interagieren können soll und select\textunderscore inputs, ein Array, das zu allen Aufklappmenüs, die zu diesem Objekt gehören, die Enumerationen und den ausgewählten Wert speichert. 
+ilAspectSelectInputGUI besitzt die privaten Attribute disabled in dem gespeichert ist, ob der Nutzer mit dem Objekt interagieren können soll und select\textunderscore inputs, ein Array, das zu allen Aufklappmenüs, die zu diesem Objekt gehören, die Enumerationen und den ausgewählten Wert speichert. 
 
-Da Setter-Methoden für beide Attribute nach ihrem Aufruf ein erneutes Rendern dieser GUI-Komponente erfordern, wurde das Füllen des Templates vom Konstruktor in die private Methode fillTemplate verlegt, sodass alle Methoden dieser Klasse darauf zugreifen können. \\
+Da Setter-Methoden für beide Attribute nach ihrem Aufruf ein erneutes Rendern dieser GUI-Komponente erfordern, wurde das Füllen des Templates vom Konstruktor in die private Methode 'fillTemplate()' verlegt, sodass alle Methoden dieser Klasse darauf zugreifen können. \\
 
 ilCheckMatrixRowGUI speichert die ID der zur Zeile gehörenden Frage im Attribut question\textunderscore id und die \$\textunderscore POST-Variablen der einzelnen Checkboxen, die aus Frage- und Nutzer-ID bestehen im Attribut postvars. 
 Über Getter-Methoden werden beide für die Auswertung der Eingabe im GUI-Controller zugänglich gemacht.\\
 
 ilReviewInputGUI stellt das das Eingabeformular für Reviews dar und erbt als solches von ilPropertyFormGUI, der Grundkomponente von ILIAS-Formularen. 
 Die Erzeugung einzelner Sektionen des Formulars ist vom Konstruktor in die privaten Methoden, die mit 'populate' beginnen, ausgelagert. 
-Die Methode setReadOnly entfernt die Schaltflächen und ruft auf allen Unterkomponenten setDisabled auf, wodurch das Eingabeformular für die Ausgabe wiederverwendet werden kann. 
+Die Methode 'setReadOnly()' entfernt die Schaltflächen und ruft auf allen Unterkomponenten 'setDisabled()' auf, wodurch das Eingabeformular für die Ausgabe wiederverwendet werden kann.
 Die Methode checkInput der Superklasse wurde überschrieben, da innerhalb des Formulars genutzte Aufklappmenüs, in denen der Default-Wert angewählt ist, nicht als ausgefüllt gelten sollen.
 
 \chapter{Laufzeitsicht}
@@ -443,7 +452,7 @@ Die globalen ILIAS-Objekte werden auch bei unseren eigenen GUI-Komponenten mithi
 
 \newpage
 
-\subsection{Review anfordern}
+\subsection{Sequenzdiagramm - Review anfordern}
 
 Nachdem der Autor eine Frage erstellt hat, kann er ein Review anfordern. Dadurch werden Reviewer bestimmt, welche vom Review-Plugin informiert werden, dass ein Review abzugeben ist.\\
 
@@ -452,7 +461,7 @@ Nachdem der Autor eine Frage erstellt hat, kann er ein Review anfordern. Dadurch
 
 \newpage
 
-\subsection{Review abschließen}
+\subsection{Sequenzdiagramm - Review abschließen}
 
 Wenn ein Reviewer sein Review abgeschlossen hat, werden die Review-Daten formatiert und abgespeichert. Im Anschluss wird der Autor informiert, dass ein neues Review vorhanden ist.\\
 
@@ -468,7 +477,7 @@ Nutzereingaben werden über diese Schnittstelle ebenfalls direkt in die Datenban
 Datenbankanbindung im Development Guide: \url{http://www.ilias.de/docu/goto_docu_pg_25354_42.html}
 ilDB in der ILIAS-Dokumentation: \url{http://ildoc.hrz.uni-giessen.de/ildoc/Release_4_4_x_branch/html/d1/d20/classilDB.html}
 
-\section{Benutzungsoberfläche}
+\section{Benutzeroberfläche}
 
 \centering
 
