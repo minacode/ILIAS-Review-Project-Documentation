@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  14 JAN 2015 14:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.29)  14 JAN 2015 15:24
 entering extended mode
 **Abschlusspräsentation.tex
 
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.tex
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -966,8 +966,8 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.aux)
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
@@ -1046,10 +1046,10 @@ LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
 LaTeX Info: Redefining \nameref on input line 9.
 
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.out)
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.out)
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.out)
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 9.
@@ -1130,8 +1130,8 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \includegraphics on input line 9.
 
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.nav)
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 10.
@@ -1139,13 +1139,13 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.toc) [2
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.toc)
+[2
 
 ]
 LaTeX Font Info:    Try loading font information for U+msa on input line 24.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 24.
@@ -1183,24 +1183,21 @@ Overfull \hbox (7.08173pt too wide) in paragraph at lines 47--47
 
 [7
 
- <C:/Users/Pebtol/Desktop/SwtGitHubRepos/ILIAS-Review-Project-Documentation/Abs
-chlusspräsentation/Diagramme/Use_Case_Diagram__Reviewplugin.png (PNG copy)>] <
-Diagramme/Use_Case_Diagram__Fragepool.png, id=258, 470.75874pt x 311.1625pt>
+ <C:/Users/Nutzer/Documents/Studium/2014_Wintersemester/SWT-Projekt/ILIAS-Revie
+w-Project-Documentation/Abschlusspräsentation/Diagramme/Use_Case_Diagram__Revi
+ewplugin.png (PNG copy)>]
+<Diagramme/Use_Case_Diagram__Fragepool.png, id=258, 470.75874pt x 311.1625pt>
 File: Diagramme/Use_Case_Diagram__Fragepool.png Graphic file (type png)
 
 <use Diagramme/Use_Case_Diagram__Fragepool.png>
 Package pdftex.def Info: Diagramme/Use_Case_Diagram__Fragepool.png used on inpu
 t line 51.
-(pdftex.def)             Requested size: 329.52887pt x 217.81226pt.
+(pdftex.def)             Requested size: 235.3788pt x 155.58087pt.
+ [8
 
-Overfull \hbox (22.239pt too wide) in paragraph at lines 51--51
-[][][][][]  
- []
-
-[8
-
- <C:/Users/Pebtol/Desktop/SwtGitHubRepos/ILIAS-Review-Project-Documentation/Abs
-chlusspräsentation/Diagramme/Use_Case_Diagram__Fragepool.png (PNG copy)>]
+ <C:/Users/Nutzer/Documents/Studium/2014_Wintersemester/SWT-Projekt/ILIAS-Revie
+w-Project-Documentation/Abschlusspräsentation/Diagramme/Use_Case_Diagram__Frag
+epool.png (PNG copy)>]
 [9
 
 ] [10
@@ -1211,13 +1208,13 @@ chlusspräsentation/Diagramme/Use_Case_Diagram__Fragepool.png (PNG copy)>]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
 
-(C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Absc
-hlusspräsentation\Abschlusspräsentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
+(C:\Users\Nutzer\Documents\Studium\2014_Wintersemester\SWT-Projekt\ILIAS-Review
+-Project-Documentation\Abschlusspräsentation\Abschlusspräsentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `Abschlusspräsentation.out' has not changed.
 
 (rerunfilecheck)             Checksum: 5FC4885FE58E3DFBD4716772D733799F;198.
@@ -1226,11 +1223,11 @@ Package rerunfilecheck Info: File `Abschlusspräsentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
  ) 
 Here is how much of TeX's memory you used:
  16764 strings out of 493921
- 323609 string characters out of 3144872
+ 324014 string characters out of 3144872
  387483 words of memory out of 3000000
  19624 multiletter control sequences out of 15000+200000
  11430 words of font info for 42 fonts, out of 3000000 for 9000
@@ -1240,7 +1237,7 @@ Here is how much of TeX's memory you used:
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Abschlusspräsentation.pdf (11 pages, 180983 bytes).
+Output written on Abschlusspräsentation.pdf (11 pages, 181204 bytes).
 PDF statistics:
  399 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
