@@ -33,8 +33,8 @@
 		\begin{frame}
 			\frametitle{Aufgabenstellung}
 			\begin{itemize}
-				\item erstellen einer Reviewbaren Frage
-				\item erstellen von Reviews zu Ilias' Fragen
+				\item Erstellen einer Reviewbaren Frage
+				\item Erstellen von Reviews zu Ilias' Fragen
 				\item Händische Zuordnung von Reviewer zu Frage
 				\item Übersicht über die eigens erstellten Fragen und Reviews
 				
@@ -56,7 +56,7 @@
     			\item Wahl des Repositorys
 		    	\item Erstellen der Reviewbaren Fragen
     			\item Wahl der Reviewerzuordnung
-    			\item erstellen der Tests lieferte Probleme
+    			\item Erstellen der Tests lieferte Probleme
     			\item Import/Export
     			\item Zeitmanagement - Wunschkriterien wurden nicht erfüllt
     		\end{itemize}
@@ -67,7 +67,10 @@
 				\item Die Review Maske wurde gemäß Prof. Wollersheims Beispiel-Maske erstellt.
 				\item Das angeben der Expertise nach Frau Kombrinks Wunsch ist implementiert.
 				\item Die Wissensdimension und Taxonomie des Autors wird angezeigt und der Reviewer muss seine eigene Einschätzung angeben.
-				
+				\item "Ghost-Reviewing" wurde implementiert - der Autor erfährt nicht den Namen des Reviewers und andersherum.
+				\item Ein Reviewbarer Fragetyp wurde implementiert.	
+				\item Die eingegebenen Daten des Reviewers werden gespeichert und stehen dem Autor zum Einsehen zur Verfügung.
+				\item Der Administrator hat Zugriff auf die Namen der Autoren und Reviewer.
 			\end{itemize}
 		\end{frame}
 
