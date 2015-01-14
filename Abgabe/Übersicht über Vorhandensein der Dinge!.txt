@@ -6,5 +6,5 @@ Entwurf -> Doku fehlt
 Implem_und_Test -> check
 Modell -> check
 Pflichtenheft -> check
-Praesentation -> Abschlusspräsi fehlt
+Praesentation -> check
 Projektorganisation -> check
