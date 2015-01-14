@@ -524,7 +524,7 @@ Wenn ein Plugin auf das andere zugreift, prüfen wir, ob das Plugin aktiviert is
 
 \section{Logging, Protokollierung, Tracing}
 
-
+Wir haben keine Maßnahmen getroffen, Ilias bietet aber einen Developer-Mode, der dazu Informationen bereitstellt.
 
 \section{Konfigurierbarkeit}
 
