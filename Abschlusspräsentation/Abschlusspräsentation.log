@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.13)  15 JAN 2015 14:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.13)  15 JAN 2015 14:15
 entering extended mode
 **Abschlusspräsentation.tex
 
@@ -1401,7 +1401,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
 Here is how much of TeX's memory you used:
  16873 strings out of 493921
  326971 string characters out of 3144882
- 386558 words of memory out of 3000000
+ 386553 words of memory out of 3000000
  19679 multiletter control sequences out of 15000+200000
  11430 words of font info for 42 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1410,7 +1410,7 @@ Here is how much of TeX's memory you used:
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Abschlusspräsentation.pdf (33 pages, 1092350 bytes).
+Output written on Abschlusspräsentation.pdf (33 pages, 1092771 bytes).
 PDF statistics:
  1122 PDF objects out of 1200 (max. 8388607)
  75 named destinations out of 1000 (max. 500000)
