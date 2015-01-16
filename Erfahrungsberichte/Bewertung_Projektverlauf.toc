@@ -1,0 +1,16 @@
+\select@language {german}
+\contentsline {chapter}{\numberline {1}Josephine Rehak - Chefprogrammiererin}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Projekt}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Fazit}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Richard M\IeC {\"o}rbitz - Assistent}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Projekt}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Fazit}{6}{section.2.2}
+\contentsline {chapter}{\numberline {3}Max Friedrich - Administrator}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Projekt}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Fazit}{7}{section.3.2}
+\contentsline {chapter}{\numberline {4}Peter Merseburger - Testverantwortlicher}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Projekt}{8}{section.4.1}
+\contentsline {section}{\numberline {4.2}Fazit}{8}{section.4.2}
+\contentsline {chapter}{\numberline {5}Julius Felchow - Sekret\IeC {\"a}r}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Projekt}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Fazit}{10}{section.5.2}

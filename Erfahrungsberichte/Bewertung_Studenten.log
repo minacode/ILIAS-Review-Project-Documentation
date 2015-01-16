@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  14 JAN 2015 16:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.28)  16 JAN 2015 14:49
 entering extended mode
-**Erfahrungsberichte.tex
+**Bewertung_Studenten.tex
 
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.tex
+hrungsberichte\Bewertung_Studenten.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -550,7 +550,7 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.aux)
+hrungsberichte\Bewertung_Studenten.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
@@ -581,9 +581,9 @@ LaTeX Info: Redefining \pageref on input line 14.
 LaTeX Info: Redefining \nameref on input line 14.
 
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.out)
+hrungsberichte\Bewertung_Studenten.out)
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.out)
+hrungsberichte\Bewertung_Studenten.out)
 \@outlinefile=\write3
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -614,7 +614,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.toc
+hrungsberichte\Bewertung_Studenten.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -629,48 +629,64 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Kapitel 1.
 [3
 
-]
+] [4]
 Kapitel 2.
-[4
-
-]
-Kapitel 3.
 [5
 
-]
-Kapitel 4.
-[6
-
-]
-Kapitel 5.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 63.
+] [6]
+Kapitel 3.
 [7
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 63.
+Kapitel 4.
+[8
+
+] [9]
+Kapitel 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--98
+
+ []
+
+[10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
 
 (C:\Users\Pebtol\Desktop\SwtGitHubRepos\ILIAS-Review-Project-Documentation\Erfa
-hrungsberichte\Erfahrungsberichte.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 63.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 63.
-Package rerunfilecheck Info: File `Erfahrungsberichte.out' has not changed.
+hrungsberichte\Bewertung_Studenten.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 111.
+Package rerunfilecheck Info: File `Bewertung_Studenten.out' has not changed.
 (rerunfilecheck)             Checksum: EC3962E875ED6FBDE9F6F269EBB5D15A;1260.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 63.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 111.
  ) 
 Here is how much of TeX's memory you used:
- 7634 strings out of 493921
- 116052 string characters out of 3144872
- 239852 words of memory out of 3000000
- 10793 multiletter control sequences out of 15000+200000
- 24905 words of font info for 56 fonts, out of 3000000 for 9000
+ 7642 strings out of 493921
+ 116123 string characters out of 3144872
+ 244854 words of memory out of 3000000
+ 10794 multiletter control sequences out of 15000+200000
+ 27055 words of font info for 59 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 40i,6n,51p,232b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,6n,51p,1235b,391s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on Erfahrungsberichte.pdf (7 pages, 57104 bytes).
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on Bewertung_Studenten.pdf (11 pages, 97607 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
